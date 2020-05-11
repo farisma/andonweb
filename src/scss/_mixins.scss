@@ -1,0 +1,107 @@
+@mixin innerpage-container {
+    width:100%;
+    max-width:812px;
+    margin:0 auto;
+   
+}
+@mixin innerpage-cont-height{
+    
+     min-height:calc(100vh - 90px);
+}
+@mixin sidemargin-innerpage-cont {
+    @media #{$mq-1000-down} {
+                margin-left:40px;
+                margin-right:40px;
+              }
+   
+}
+@mixin innerpagetitle {
+    @include swissblackcondensed;
+    letter-spacing:-2px;
+    text-transform:uppercase;
+    font-size:50px;
+    line-height:40px;
+    margin-bottom:30px;
+    @include sidemargin-innerpage-cont;
+    @media #{$mq-1000-down}{                  
+                    font-size: 24px;
+                    line-height: 21px;
+                   
+                }
+
+}
+
+@mixin innerpagesubtitle {
+    font-size:30px;
+    @include swissblackcondensed;
+    margin-bottom:15px;
+    line-height:100%;
+    @include sidemargin-innerpage-cont;
+    @media #{$mq-1000-down}{                  
+                    font-size: 15px;
+                    line-height: 16px;
+                    
+                }
+}
+@mixin innerpageintro {
+    font-size:11px;
+    line-height:13px;
+    @include swissCondensed;
+    max-width:100%;
+    width:auto;
+    @include sidemargin-innerpage-cont;
+     @media #{$mq-760-up}{ 
+         max-width:544px;
+     }
+    @media #{$mq-1000-up}{                  
+                    font-size: 15px;
+                    line-height:17px;
+                    
+                    width:100%;
+                }
+}
+
+@mixin innerpagelist-cont{
+    margin-top:60px;
+    margin-bottom:60px;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    @include sidemargin-innerpage-cont;
+}
+
+@mixin innerpage-list-item {
+    text-align:center;
+    width:50%;
+    margin-top:20px;
+    margin-bottom:20px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+     
+     @media #{$mq-620-up} {
+         width:33.3%;
+     }
+   
+      @media #{$mq-900-up} {
+         width:16.6%;
+     }
+}
+@mixin innerpage-copyright {
+    @include swissCondensed;
+      max-width:100%;
+      letter-spacing:2px;
+      text-align:center;
+      font-size:10px;
+      padding-bottom:50px;
+      text-transform: uppercase;
+      text-align:center;
+      @media #{$mq-1000-down} {
+                  padding-bottom:25px;
+               }
+       
+     }
+            
+
+ 
