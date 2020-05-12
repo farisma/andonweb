@@ -68,6 +68,6 @@
 
 /** @format */
 
-//console.log("listlinks", listLinks);
+//console.log("parentelement", element.parentElement.parentElement);
 
-//console.log(element);
+//this.querySelector(".show").classList.remove("show");
