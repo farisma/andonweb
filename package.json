@@ -34,7 +34,7 @@
   "dependencies": {
     "gh-pages": "^2.2.0",
     "gsap": "^3.2.6",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "lodash": "^4.17.15",
     "vanilla-lazyload": "^15.1.1"
   }
