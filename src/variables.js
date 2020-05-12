@@ -12,5 +12,7 @@ var elements = {
   front_page_image: $(".front-page-main-copy img"),
   homeVideo: $("#homeVideo"),
   copyrightyear: document.getElementById("current_year"),
+  view_member_link: document.querySelectorAll(".view-member-info"),
+  team_tile: document.querySelectorAll(".view-member-info"),
 };
 export default elements;

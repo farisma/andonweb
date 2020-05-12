@@ -58,36 +58,16 @@
 
 /************************************************************************/
 
-/* 0 */
-
-/* 1 */
-
 /***/
 
 /* WEBPACK VAR INJECTION */
 
 /* harmony default export */
 
-/* 2 */
-
-/* 3 */
-
 /* harmony import */
 
-//return $(document).height();
+/** @format */
 
-//for avoiding outside bars height in ios
+//console.log("listlinks", listLinks);
 
-/* 4 */
-
-/* 5 */
-
-/* 6 */
-
-/* 7 */
-
-/*#__PURE__*/
-
-/* 8 */
-
-// extracted by mini-css-extract-plugin
+//console.log(element);

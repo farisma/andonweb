@@ -33,7 +33,7 @@ $(document).ready(function () {
     var lazyLoad = new LazyLoad({
         elements_selector:'.lazy-load'
     })
-    //console.log("current", elements.copyrightyear);
+  
     elements.copyrightyear.textContent = new Date().getFullYear();
-    //console.log("year", new Date("Y"));
+    
 });

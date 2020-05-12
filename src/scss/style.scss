@@ -622,59 +622,23 @@ p{
                   opacity:1;
               }
               .box-copy{
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                height: 100%;
-                width: 100%;
-                opacity: 0;
-                transition: .5s ease;
-                background: rgba(0,0,0,.7);
-                display:flex;
-                justify-content: flex-end;
-                flex-direction: column;
+                 @include tile-mouseover;
                     h2{
-                        @include swissBoldCondensed;
+                        @include tilemouseovercopyh2;
                         font-size:27px;
-                        line-height:34px;
-                        color:#fff;
-                        padding-left:21px;
-                        text-transform:uppercase;
-
+                        line-height:34px;                        
                     }
-                    h3{
-                        @include swissCondensed;
+                    h3{                       
+                        @include tilemouseovercopyh3;
                         font-size:18px;
                         line-height:24px;
-                        color:#f6921e;
-                        padding-left:21px;
-                        padding-bottom:16px;
-                        text-transform:uppercase;
-                        font-weight:normal;
                     }
                     a{
-                        text-decoration:none;
-                        color:#fff;
-                        @include swissLightCondensed;
-                        font-size:11px;
-                        line-height:14px;
-                        padding-left:21px;
-                        padding-bottom:16px;
-                        text-transform:uppercase;
-                        position:relative;
-                        &:after {
-                            position: absolute;
-                            content:'';
-                            left:71px;
-                            top:4px;
-                            width:5px;
-                            height:5px;
-                            border-right:.5px solid #fff;
-                            border-top:.5px solid #fff;
-                            transform: rotate(45deg);
-
+                       @include tilemouseover_a;
+                       font-size:11px;
+                       line-height:14px;                    
+                       &:after {
+                            @include tilemouseover_a_after;
                         }
                     }
               }
@@ -728,9 +692,128 @@ p{
     }
     
 }
+.team-cont {
+    @include innerpage-container;
+    @include innerpage-cont-height;
+    display:flex;
+    flex-direction:column;
+    margin-top:40px;
+     @media #{$mq-1366-up} { 
+        margin-top:-27px;
+     }
+    h1 {
+        @include innerpagetitle;
+    }
+    h4{
+        @include innerpagesubtitle;
+    }
+    p {
+         @include innerpageintro;
+      
+         font-weight:normal;
+    }
+    .team-list {
+        @include innerpagelist-cont;
+        margin-top:10px;
+          @media #{$mq-620-up} {
+                margin-left:auto;
+                margin-right:auto;
+                max-width:550px;
+              }
+               @media #{$mq-900-up} {
+                
+                max-width:100%;
+              }
+        .team-list-item {
+            position:relative;
+            @include innerpage-list-item;
+          
+             transition: all 1s ease-out;
+             text-align:center;
+             width:100%;
+             margin-bottom:0px;
+          
+            @media #{$mq-620-up} {
+                 width:48%;
+                }
+   
+            @media #{$mq-900-up} {
+                width:30%;
+            }
+            @media #{$mq-1000-up} {
+                width:31%;
+            }
+            img {
+                width:100%;
+                max-width:100%;
+                height:auto;
+            }
+
+            &:hover .team-list-item-copy {
+                opacity: 1;
+            }
+            .team-list-item-copy{
+                @include tile-mouseover;
+                    h2{
+                        @include tilemouseovercopyh2;
+                        font-size:20px;
+                        line-height:27px;                       
+                        text-align:left;
+
+                    }
+                    h3{
+                       @include tilemouseovercopyh3;
+                       font-size:14px;
+                       line-height:20px;                        
+                       text-align:left;
+                    }
+                    p.teammember-info{
+                        text-align:left;
+                        @include swissLightCondensed;
+                        font-size:16px;
+                        line-height:21px;
+                        padding-left:21px;
+                        padding-right:21px;
+                        margin-bottom:10px;
+                        margin:0;
+                        color:#fff;
+                        display: none;
+                        opacity:0;
+                        transition: all .75s ease-out;
+                        
+                        &.show {
+                            display: block;
+                            opacity:1;
+                             transition: all .75s ease-out;
+                        }
+                    }
+                    a{
+                        @include tilemouseover_a;
+                        font-size:10px;
+                        line-height:14px;
+                        text-align:left;
+                        opacity:0;
+                        
+                        &.show {
+                            opacity:1;
+                        }
+                        &:after {
+                            @include tilemouseover_a_after;
+
+                        }
+                    }
+              }
+        }
+    }
+    
+}
 .innerpage-footer {
 height:120px;
 margin-top:auto;
+margin-bottom:50px;
+@media #{$mq-1000-down} {
+        margin-bottom:25px;
+     }
 .innerpage-copyright {
     @include innerpage-copyright;
              

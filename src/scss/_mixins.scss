@@ -21,12 +21,12 @@
     text-transform:uppercase;
     font-size:50px;
     line-height:40px;
-    margin-bottom:30px;
+    margin-bottom:60px;
     @include sidemargin-innerpage-cont;
     @media #{$mq-1000-down}{                  
                     font-size: 24px;
                     line-height: 21px;
-                   
+                   margin-bottom:40px;
                 }
 
 }
@@ -94,14 +94,71 @@
       letter-spacing:2px;
       text-align:center;
       font-size:10px;
-      padding-bottom:50px;
+    //   padding-bottom:50px;
       text-transform: uppercase;
       text-align:center;
-      @media #{$mq-1000-down} {
-                  padding-bottom:25px;
-               }
+    //   @media #{$mq-1000-down} {
+    //               padding-bottom:25px;
+    //            }
        
      }
+
+
+     @mixin tile-mouseover {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background: rgba(0,0,0,.7);
+        display:flex;
+        justify-content: flex-end;
+        flex-direction: column;
+     }
+     @mixin tilemouseovercopyh2{
+         
+          @include swissBoldCondensed;
+           color:#fff;
+           padding-left:21px;
+           text-transform:uppercase;
+     }
+
+     @mixin tilemouseovercopyh3{
+         
+        @include swissCondensed;
+        color:#f6921e;
+        padding-left:21px;
+        padding-bottom:16px;
+        text-transform:uppercase;
+        font-weight:normal;
+
+     }
+
+     @mixin tilemouseover_a {
+        text-decoration:none;
+        color:#fff;
+        @include swissLightCondensed;
+        padding-left:21px;
+        padding-bottom:16px;
+        text-transform:uppercase;
+        position:relative;
+     }
+ @mixin tilemouseover_a_after {
+      position: absolute;
+      content:'';
+      left:71px;
+      top:4px;
+      width:5px;
+      height:5px;
+      border-right:.5px solid #fff;
+      border-top:.5px solid #fff;
+      transform: rotate(45deg);
+
+ }
             
 
  

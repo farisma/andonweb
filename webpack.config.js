@@ -6,27 +6,28 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const optimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 module.exports = {
-  mode: 'production',
+  mode: "production",
   entry: {
-    index: './src/index.js',
-    menu:'./src/menu.js',
-    home:'./src/home.js',
+    index: "./src/index.js",
+    menu: "./src/menu.js",
+    home: "./src/home.js",
+    team: "./src/team.js",
   },
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
   },
-   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+  devServer: {
+    contentBase: path.join(__dirname, "dist"),
     compress: true,
-    port: 9000
+    port: 9000,
   },
   plugins: [
     new Webpack.ProvidePlugin({
       $: "jquery",
-      jQuery: "jquery"
+      jQuery: "jquery",
     }),
-   /* new CleanWebpackPlugin(),
+    /* new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         filename: 'index.html',
         template: './src/index.html',
@@ -39,38 +40,26 @@ module.exports = {
         chunks: ['index', 'menu', 'about'],
         chunksSortMode: 'dependency'
       }),*/
-      new MiniCssExtractPlugin()
-    
+    new MiniCssExtractPlugin(),
   ],
   module: {
     rules: [
-       {
-                use:'babel-loader',
-                test:/\.js$/
-       },
       {
-        test:/.scss$/,
-        use:[
-          MiniCssExtractPlugin.loader,
-             
-          'css-loader',
-          
-          'sass-loader'
-        ]
+        use: "babel-loader",
+        test: /\.js$/,
+      },
+      {
+        test: /.scss$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          'file-loader',
-        ],
+        use: ["file-loader"],
       },
-       {
-       test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: [
-          'file-loader',
-        ],
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ["file-loader"],
       },
-    
     ],
   },
   optimization: {
@@ -79,19 +68,18 @@ module.exports = {
         commons: {
           test: /[\\/]node_modules[\\/]/,
           name: "common",
-          chunks: 'all'
-        }
-      }
+          chunks: "all",
+        },
+      },
     },
-     
+
     minimizer: [
       new UglifyJsPlugin({
         test: /\.js(\?.*)?$/i,
         //include: /\/src/,
-        extractComments: 'all',
+        extractComments: "all",
       }),
-      new optimizeCssAssetsPlugin()
+      new optimizeCssAssetsPlugin(),
     ],
-  
-  }
+  },
 };
