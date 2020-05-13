@@ -709,6 +709,7 @@ p{
      }
     h1 {
         @include innerpagetitle;
+        
     }
     h4{
         @include innerpagesubtitle;
