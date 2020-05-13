@@ -661,8 +661,11 @@ p{
     @include innerpage-cont-height;
     display:flex;
     flex-direction:column;
-    margin-top:40px;
-     @media #{$mq-1366-up} { 
+    margin-top:80px;
+     @media #{$mq-1000-down} { 
+        margin-top:50px;
+     }
+     @media #{$mq-1680-up} { 
         margin-top:-27px;
      }
     h1 {
@@ -697,8 +700,11 @@ p{
     @include innerpage-cont-height;
     display:flex;
     flex-direction:column;
-    margin-top:40px;
-     @media #{$mq-1366-up} { 
+    margin-top:80px;
+     @media #{$mq-1000-down} { 
+        margin-top:50px;
+     }
+     @media #{$mq-1680-up} { 
         margin-top:-27px;
      }
     h1 {
