@@ -754,7 +754,8 @@ p{
                 width:30%;
             }
             @media #{$mq-1000-up} {
-                width:31%;
+                // width:31%;
+                width:257px;
             }
             img {
                 width:100%;
