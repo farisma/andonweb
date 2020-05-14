@@ -90,10 +90,6 @@
 
 /* 9 */
 
-// var slideDist = this.findContentSlideDistance();
-
-/* setTimeout(function()  { */
-
-/*}, secs);*/
+/*Linear.easeNone*/
 
 //console.log(app.homeVideo)
