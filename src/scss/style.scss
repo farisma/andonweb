@@ -822,6 +822,44 @@ p{
     }
     
 }
+
+.about-cont {
+    @include innerpage-container;
+    @include innerpage-cont-height;
+    display:flex;
+    flex-direction:column;
+    margin-top:80px;
+     @media #{$mq-1000-down} { 
+        margin-top:50px;
+     }
+     @media #{$mq-1680-up} { 
+        margin-top:-27px;
+     }
+    h1 {
+        @include innerpagetitle;
+        
+    }
+    h4{
+        @include innerpagesubtitle;
+    }
+    p {
+         @include innerpageintro;
+         max-width:100%;
+         font-weight:normal;
+            @media #{$mq-760-up}{ 
+         max-width:100%;
+        }
+    }
+    .about-content {
+        padding-top:30px;
+        padding-bottom:30px;
+        p {
+            @include swissLightCondensed;
+            padding:15px 0;
+            line-height:25px;
+        }
+    }
+}
 .innerpage-footer {
 height:120px;
 margin-top:auto;
