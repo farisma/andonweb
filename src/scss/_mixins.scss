@@ -19,24 +19,24 @@
     @include swissblackcondensed;
     
     text-transform:uppercase;
-    // letter-spacing:-2px;
-    // font-size:50px;
-    // line-height:40px;
+  
     letter-spacing:-5px;
     font-size:80px;
     line-height:80%;
     margin-bottom:60px;
+    margin-left:-2px;
     @include sidemargin-innerpage-cont;
     @media #{$mq-1000-down}{                  
                     font-size: 24px;
                     line-height: 21px;
-                   margin-bottom:40px;
+                    margin-bottom:40px;
+                    letter-spacing:-1px;
                 }
 
 }
 
 @mixin innerpagesubtitle {
-    font-size:30px;
+    font-size:20px;
     @include swissblackcondensed;
     margin-bottom:15px;
     line-height:100%;
@@ -129,6 +129,8 @@
            color:#fff;
            padding-left:21px;
            text-transform:uppercase;
+           font-size:20px;
+           line-height:20px;  
      }
 
      @mixin tilemouseovercopyh3{
@@ -139,6 +141,8 @@
         padding-bottom:16px;
         text-transform:uppercase;
         font-weight:normal;
+        font-size:14px;
+        line-height:20px;
 
      }
 
@@ -150,11 +154,13 @@
         padding-bottom:16px;
         text-transform:uppercase;
         position:relative;
+        font-size:10px;
+        line-height:14px;
      }
  @mixin tilemouseover_a_after {
       position: absolute;
       content:'';
-      left:71px;
+      left:74px;
       top:4px;
       width:5px;
       height:5px;
