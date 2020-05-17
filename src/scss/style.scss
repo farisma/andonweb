@@ -518,7 +518,7 @@ p{
 .boxes-cont {
     @include innerpage-container;
     margin-top:40px;
-
+    
     .box-head {
         max-height:300px;
         position:relative;
@@ -598,7 +598,7 @@ p{
         /*max-width:812px;
         width:100%;*/
         
-        margin:9px auto 0 auto;
+        margin:9px auto 60px auto;
         
         @media #{$mq-1000-down} {
             margin: 0 40px;
@@ -859,6 +859,93 @@ p{
             line-height:25px;
         }
     }
+}
+.contact-cont {
+    @include innerpage-container;
+    @include innerpage-cont-height;
+    display:flex;
+    flex-direction:column;
+    margin-top:80px;
+     @media #{$mq-1000-down} { 
+        margin-top:50px;
+     }
+     @media #{$mq-1680-up} { 
+        margin-top:-27px;
+     }
+    h1 {
+        @include innerpagetitle;
+        
+    }
+    .contact-content {
+       
+        display:flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top:30px;
+        padding-bottom:30px;
+         @media #{$mq-1000-down} { 
+                flex-direction: column;
+            }
+        
+        p {
+            @include swissLightCondensed;
+            padding:15px 0;
+            line-height:25px;
+        }
+        .contact-half-1 {
+            height:300px;
+            width:30%;
+            display: flex;
+            flex-direction:column;
+            justify-content: space-between;
+            @include sidemargin-innerpage-cont;
+            @media #{$mq-1000-down} { 
+                width:calc(100% - 80px);
+                height:auto;
+                justify-content: flex-start;
+                
+            }
+            .bottom-half {
+                 @media #{$mq-1000-down} { 
+                    margin-top:30px;
+                    margin-bottom:30px;
+                 }
+            }
+            h3{
+                @include innerpagesubtitle;
+               @media #{$mq-1000-down} { 
+                   margin-left:0;
+               }
+            }
+            p{
+                @include swissLightCondensed;
+                font-size:15px;
+                line-height:25px;
+                margin:0;
+                padding:0px;
+            }
+            a  {
+                display:block;
+                @include swissLightCondensed;
+                font-size:15px;
+                line-height:25px;
+                color:#000;
+                text-decoration: none;;
+            }
+        }
+        .contact-map {
+            height:300px;
+            width:70%;
+            @include sidemargin-innerpage-cont;
+             @media #{$mq-1000-down} { 
+                width:calc(100% - 80px);
+            }
+        }
+    }
+}
+#map {
+    height:100%;
+    width:100%;
 }
 .innerpage-footer {
 height:120px;

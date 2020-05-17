@@ -4,12 +4,14 @@ import elements from "./variables";
 
 $(window).on("load", function () {
   
-    var listLinks =elements.view_member_link;
-    listLinks.forEach(function (element) {
+    let listLinks =elements.view_member_link;
+  listLinks.forEach((element) => {
+   // alert("clicked");
         console.log("elem",element);
-        element.addEventListener("click", function (e) {
+    element.addEventListener("click", function (e) {
+         //alert("click")
             e.preventDefault();
-            var listP =
+            let listP =
                 element.parentElement.querySelector(".teammember-info")
             listP.classList.add("show");
             this.classList.remove("show");
