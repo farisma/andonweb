@@ -71,3 +71,13 @@ h3 {
 @mixin swissBoldCondensed {
 font-family: 'Conv_Swiss 721 Bold Condensed BT';
 }
+
+@mixin hurmeRegular {
+font-family: 'Conv_HurmeGeometricSans1';
+}
+@mixin hurmeRegularBold {
+font-family: 'Conv_HurmeGeometricSans1 Bold';
+}
+@mixin hurmeRegularSemiBold {
+font-family: 'Conv_HurmeGeometricSans1 SemiBold';
+}

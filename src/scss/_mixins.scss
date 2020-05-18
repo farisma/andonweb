@@ -169,6 +169,32 @@
       transform: rotate(45deg);
 
  }
+
+ @mixin setMarginTop($val) {
+margin-top:$val;
+ }
+  @mixin setMarginBottom($val) {
+     margin-bottom:$val;
+ }
+@mixin setMarginLeft($val) {
+     margin-left:$val;
+ }
+ @mixin setMarginRight($val) {
+     margin-right:$val;
+ }
+
+  @mixin setPaddingTop($val) {
+    padding-top:$val;
+ }
+  @mixin setPaddingBottom($val) {
+     padding-bottom:$val;
+ }
+  @mixin setPaddingLeft($val) {
+     padding-left:$val;
+ }
+ @mixin setPaddingRight($val) {
+     padding-right:$val;
+ }
             
 
  
