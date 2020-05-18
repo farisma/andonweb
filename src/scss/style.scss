@@ -664,7 +664,7 @@ p{
 
 .clients-cont {
     @include innerpage-container;
-    @include innerpage-cont-height;
+    // @include innerpage-cont-height;
     display:flex;
     flex-direction:column;
     margin-top:80px;
@@ -703,7 +703,7 @@ p{
 }
 .team-cont {
     @include innerpage-container;
-    @include innerpage-cont-height;
+    // @include innerpage-cont-height;
     display:flex;
     flex-direction:column;
     margin-top:80px;
@@ -825,7 +825,7 @@ p{
 
 .about-cont {
     @include innerpage-container;
-    @include innerpage-cont-height;
+    // @include innerpage-cont-height;
     display:flex;
     flex-direction:column;
     margin-top:80px;
@@ -862,7 +862,7 @@ p{
 }
 .contact-cont {
     @include innerpage-container;
-    @include innerpage-cont-height;
+    // @include innerpage-cont-height;
     display:flex;
     flex-direction:column;
     margin-top:80px;
@@ -948,6 +948,11 @@ p{
 #map {
     height:100%;
     width:100%;
+}
+.works-page-cont {
+    @include innerpage-container;
+    
+
 }
 .innerpage-footer {
 height:120px;

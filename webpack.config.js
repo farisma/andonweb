@@ -23,6 +23,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, "dist"),
     compress: true,
+    watchContentBase: true,
     port: 9000,
     watchOptions: {
       ignored: [path.resolve(__dirname, "node_modules")],

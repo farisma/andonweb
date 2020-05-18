@@ -188,7 +188,7 @@ class Map {
     return new googleMaps.Map(mapElement, {
       center: { lat: 25.068612, lng: 55.145069 },
       zoom: 12,
-      zoomControl: true,
+      zoomControl: false,
       mapTypeControl: false,
       scaleControl: false,
       streetViewControl: false,
