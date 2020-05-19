@@ -14,5 +14,11 @@ var elements = {
   copyrightyear: document.getElementById("current_year"),
   view_member_link: document.querySelectorAll(".view-member-info"),
   team_tile: document.querySelectorAll(".view-member-info"),
+  anim_onLoad: document.querySelector("div.pageanimonload"),
+  innerpage_footer: document.querySelector("div.innerpage-footer"),
+  onscroll_elements: document.querySelectorAll(
+    ".animateToTop,.box,.team-list-item"
+  ),
+  work_section: document.querySelectorAll(".worksecAnim"),
 };
 export default elements;

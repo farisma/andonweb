@@ -169,6 +169,13 @@
       transform: rotate(45deg);
 
  }
+ @mixin tile-mouseover-copy-anim-hover {
+      transform:translateY(0px);
+ }
+@mixin tile-mouseover-copy-anim {
+ transform:translateY(20px);  
+ transition: all .4s ease-out 0s;  
+}
 
  @mixin setMarginTop($val) {
 margin-top:$val;

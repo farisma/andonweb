@@ -4,7 +4,8 @@ import elements from "./variables";
 
 $(window).on("load", function () {
   
-    let listLinks =elements.view_member_link;
+  let listLinks = elements.view_member_link;
+  console.log("list", listLinks);
   listLinks.forEach((element) => {
    // alert("clicked");
         console.log("elem",element);

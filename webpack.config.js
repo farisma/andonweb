@@ -13,7 +13,8 @@ module.exports = {
     menu: "./src/menu.js",
     home: "./src/home.js",
     team: "./src/team.js",
-    map:"./src/map.js"
+    map: "./src/map.js",
+    workanim: "./src/workanim.js"
   },
   output: {
     filename: "js/[name].bundle.js",
@@ -86,7 +87,7 @@ module.exports = {
               //   return `${url}`;
               // }
               outputPath: "images",
-               publicPath: "../images",
+              publicPath: "../images",
             },
           },
         ],
