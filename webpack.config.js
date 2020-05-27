@@ -14,7 +14,7 @@ module.exports = {
     home: "./src/home.js",
     team: "./src/team.js",
     map: "./src/map.js",
-    workanim: "./src/workanim.js"
+    workanim: "./src/workanim.js",
   },
   output: {
     filename: "js/[name].bundle.js",
@@ -66,8 +66,9 @@ module.exports = {
         use: {
           loader: "babel-loader",
           options: {
-            // presets: ["@babel/preset-env"],
-            presets: ["env"],
+            presets: ["@babel/preset-env"],
+            // presets: ["env"], // env
+            plugins: ["@babel/plugin-transform-runtime"],
             cacheDirectory: true,
           },
         },
