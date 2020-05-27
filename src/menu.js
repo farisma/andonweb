@@ -4,6 +4,9 @@ import elements from './variables';
 import common from './general';
 gsap.registerPlugin();
 var menuAnim = {
+    getUrl: function () {
+        return window.location.href;
+    },
     setMenuMargin: function(){
       
             var offset_top = $(elements.front_page_image).offset().top;
