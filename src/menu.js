@@ -8,10 +8,12 @@ var menuAnim = {
         return window.location.href;
     },
     setMenuMargin: function(){
-      
-            var offset_top = $(elements.front_page_image).offset().top;
-            elements.menu.find('ul').css('margin-top',offset_top);
-            console.log(offset_top)
+        let menu = document.getElementById("menu");
+        var offset_top = $(elements.front_page_image).offset().top;
+         console.log(menu.children[1]);
+        menu.children[1].style.marginTop = offset_top;
+            //('margin-top',offset_top);
+            //console.log(offset_top)
     },
     findMenuWidth: function(){
         var winW = common.findWinWidth();
@@ -24,7 +26,7 @@ var menuAnim = {
         return WinH - footerHeight;
     },
     slideMenu: function(){          
-           elements.menu.addClass('show');           
+           elements.menu.classList.add('show');           
            var tl = new TimelineMax();
            console.log("hi")
            var menuWidth = this.findMenuWidth();
@@ -32,11 +34,19 @@ var menuAnim = {
            .to(elements.wrapper, .3, {x:menuWidth, ease:Linear.easeNone})
           // .to(this.menu, .3, {x:menuWidth, css:{zIndex:25}, ease:Linear.easeNone},"+=0.1")          
            .staggerTo(elements.nav_item,.5,{x:0,autoAlpha:1,ease:Linear.easeNone},0.15,"-=1.0")
-           .from('.closeMenu',0.5,{autoAlpha:0},"+=0.3");
+            .from('.closeMenu', 0.5, { autoAlpha: 0 }, "+=0.3");
+        
+          document
+            .querySelector(".closeMenu")
+            .addEventListener("click", (e) => {
+              var $slideMenuBtn = document.querySelector(".slide_menu");
+              menuAnim.hideMenu();
+              $slideMenuBtn.classList.remove("open");
+            });
           
     },
-    hideMenu: function(){     
-        elements.menu.removeClass('show');
+    hideMenu: function () {    
+        elements.menu.classList.remove('show');
         var tl = new TimelineMax();  
         var menuWidth = this.findMenuWidth();      
         tl.to(elements.menu, 0.25, {left:-menuWidth, ease:Linear.easeNone}) 
@@ -48,6 +58,90 @@ var menuAnim = {
        var that = this;
        that.setMenuMargin();
     },
+    setMenu: function () {
+        let arrayLinks = [];
+        // arrayLinks["index.html"] = "";
+        // arrayLinks["works.html"] = "";
+        // arrayLinks["team.html"] = "";
+        // arrayLinks["clients.html"] = "";
+        // arrayLinks["about.html"] = "";
+        // arrayLinks["contact.html"] = "";
+            arrayLinks["index.html"] = "";
+            arrayLinks["works.html"] = "";
+            arrayLinks["team.html"] = "";
+            arrayLinks["clients.html"] = "";
+            arrayLinks["about.html"] = "";
+            arrayLinks["contact.html"] = "";
+        const menu = elements.menu;
+        let url = this.getUrl();
+       // alert(url);
+        let splitURL = url.split('/');
+        let index = splitURL.length;
+        let currentPage = splitURL[index - 1];
+        if (currentPage == "index.html") 
+            arrayLinks["index.html"] = "active";
+        else if (currentPage == "works.html")
+            arrayLinks["works.html"] = "active";
+        else if (currentPage == "team.html")
+            arrayLinks["team.html"] = "active";
+        else if (currentPage == "clients.html")
+            arrayLinks["clients.html"] = "active";
+        else if (currentPage == "about.html")
+            arrayLinks["about.html"] = "active";
+        else if (currentPage == "contact.html")
+            arrayLinks["contact.html"] = "active";
+        //console.log("links",arrayLinks.length);
+        // arrayLinks.forEach(item => {
+        //     console.log("item",item);
+        // })
+       // if()
+        let innerMenu = `
+        <ul>
+             <li class="nav-item ${arrayLinks["works.html"]}">
+                 <a href="works.html"> Our work</a>
+             </li>
+             <li class="nav-item ${arrayLinks["clients.html"]}">
+                <a href="clients.html"> clients</a>
+              </li>
+              <li class="nav-item ${arrayLinks["team.html"]}">
+                <a href="team.html"> Our people</a>
+              </li>
+              <li class="nav-item ${arrayLinks["about.html"]}">
+                <a href="about.html">About</a>
+              </li>
+              <li class="nav-item ${arrayLinks["contact.html"]}">
+                <a href="contact.html"> Contact</a>
+              </li>
+            </ul>
+           
+        `;
+        menu.innerHTML += innerMenu;
+        
+    },
+    setFooter:function() {
+        let innerPageFooter = document.querySelector(".innerpage-footer");
+        if (innerPageFooter) {
+            let footerElem = `
+         <div class="social-icons">
+                        <ul>
+                           <li><a href="#">fb</a></li>
+                            <li><a href="#">insta</a></li>
+                            <li><a href="#">yt</a></li>
+                            <li><a href="#">ln</a></li>
+                        </ul>
+                        
+                    </div>
+                        <p class="innerpage-copyright">
+                        © <span id="current_year"></span> The Andon Group. All rights reserved.
+                       </p>
+        `;
+      
+            innerPageFooter.innerHTML += footerElem;
+            document.getElementById(
+                "current_year"
+            ).textContent = new Date().getFullYear();
+        }
+    }
 }
 
 export default menuAnim;

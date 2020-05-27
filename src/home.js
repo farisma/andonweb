@@ -6,7 +6,10 @@ import menuAnim from './menu';
 
 gsap.registerPlugin();
 var app = {
-    loadLogo: function(){
+  loadLogo: function () {
+    document.getElementById(
+      "current_year"
+    ).textContent = new Date().getFullYear();
         var tl = new TimelineMax({delay:.5});
         tl.from(
           ".g-logo",

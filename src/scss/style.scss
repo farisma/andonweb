@@ -379,6 +379,11 @@
         opacity:0;
         transition: 1s; 
         text-align: right;
+        &.active {
+            a {
+                color:#F6921E;
+            }
+        }
         @media #{$mq-1000-down} {
             line-height:22px;
 

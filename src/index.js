@@ -21,17 +21,34 @@ $(document).ready(function () {
                                     $this.addClass("open");
                                   }
                                 });
-                                $(".closeMenu").click(function (e) {
-                                  e.preventDefault();
-                                  var $slideMenuBtn = elements.slideMenuBtn;
-                                  menuAnim.hideMenu();
-                                  $slideMenuBtn.removeClass("open");
-                                });
+      console.log("closeMenu", document.querySelector(".closeMenu"));
+                               document
+                                 .querySelector(".closeMenu")
+                                 .addEventListener("click", (e) => {
+                                   //e.preventDefault();
+                                   alert("dafdsf");
+                                   var $slideMenuBtn = document.querySelector(
+                                     ".slide_menu"
+                                   );
+                                   menuAnim.hideMenu();
+                                   $slideMenuBtn.classList.remove("open");
+                                 });
+                                // $(".closeMenu").click(function (e) {
+                                //   e.preventDefault();
+                                //   var $slideMenuBtn = elements.slideMenuBtn;
+                                //   menuAnim.hideMenu();
+                                //   $slideMenuBtn.removeClass("open");
+                                // });
                                 var lazyLoad = new LazyLoad({
                                   elements_selector: ".lazy-load",
                                 });
-
-                                elements.copyrightyear.textContent = new Date().getFullYear();
+  // set common menu and footer
+  menuAnim.setMenu();
+  menuAnim.setFooter();
+  // setTimeout(() => {
+  //                      elements.copyrightyear.textContent = new Date().getFullYear();     
+  //                        },500)
+                               
 
                                 //  animation on load on all pages
                                 // added classto animate on each container
@@ -44,8 +61,8 @@ $(document).ready(function () {
                                       elements.onscroll_elements
                                     );
                              }
-    
-                       
+                            //alert("load")
+
     
 
                             });

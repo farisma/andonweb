@@ -1,7 +1,7 @@
 var elements = {
   menubtn: $(".slide"),
   slideMenuBtn: $(".slide_menu"),
-  menu: $("#menu"),
+  menu: document.getElementById("menu"),
   wrapper: $(".content"),
   slidedUpContentClass: "front-page-slide-up",
   introContent: ".intro-content",
