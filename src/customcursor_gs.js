@@ -15,6 +15,7 @@ class Customcursor {
     const closeBtn = document.querySelector(".closeMenu");
     const footerIcons = document.querySelectorAll(".social-icons ul");
     const navLinks = document.querySelectorAll("#menu ul li.nav-item");
+    const clientList = document.querySelectorAll(".client-list-item");
     const boxLinks = document.querySelectorAll(
       ".box-copy h2,.box-copy h3,.box-copy a"
     );
@@ -29,22 +30,11 @@ class Customcursor {
       footerIcons,
       navLinks,
       boxLinks,
-      teamListLinks
+      teamListLinks,
+      clientList
     ]);
   }
-    getMousePosition() {
-        // this.cursor.setAttribute(
-        //   "style",
-        //   `top:${mouseOffsetY}px; left:${mouseOffsetX}px`
-          
-        // );
-        // document.addEventListener("mousemove", (e) => {
-    
-        //     this.mouseOffsetX = e.pageX;
-        //     this.mouseOffsetY = e.pageY;
-        // });
-        
-    }
+
   mouseMove() {
    
     document.addEventListener("mousemove", (e) => {
@@ -53,6 +43,7 @@ class Customcursor {
     });
     
       const render = () => {
+          //console.log("render")
           TweenMax.to(
             this.cursor,
             0.4,
