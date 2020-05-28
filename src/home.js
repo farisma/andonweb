@@ -121,28 +121,28 @@ $(window).on('load',function () {
     //alert('load')
    
     var videoElem = document.getElementById("homeVideo");
-   if(videoElem) {
-		if (elements.homeVideo.children().length == 0) {
-			var vidsrc = elements.homeVideo.data('vid-src');
-			var videoURL = app.getVideoURL(vidsrc);
-			var videoSrcAppend = '';
-			videoURL.forEach(function (item) {
-				var videoFormat = app.getFormat(item);
-				if (videoFormat == "mp4") {
-					videoSrcAppend += '<source src="' + item + '" type="video/mp4">';
-				}
-				else if (videoFormat == "webm") {
-					videoSrcAppend += '<source src="' + item + '" type="video/webm">';
-				}
-				else {
-					videoSrcAppend += '<source src="' + item + '" type="video/ogg">';
-				}
-			});
-			elements.homeVideo.html('');
-			elements.homeVideo.append(videoSrcAppend);
-		}
-        elements.homeVideo.trigger('play');
-        }
+  //  if(videoElem) {
+	// 	if (elements.homeVideo.children().length == 0) {
+	// 		var vidsrc = elements.homeVideo.data('vid-src');
+	// 		var videoURL = app.getVideoURL(vidsrc);
+	// 		var videoSrcAppend = '';
+	// 		videoURL.forEach(function (item) {
+	// 			var videoFormat = app.getFormat(item);
+	// 			if (videoFormat == "mp4") {
+	// 				videoSrcAppend += '<source src="' + item + '" type="video/mp4">';
+	// 			}
+	// 			else if (videoFormat == "webm") {
+	// 				videoSrcAppend += '<source src="' + item + '" type="video/webm">';
+	// 			}
+	// 			else {
+	// 				videoSrcAppend += '<source src="' + item + '" type="video/ogg">';
+	// 			}
+	// 		});
+	// 		elements.homeVideo.html('');
+	// 		elements.homeVideo.append(videoSrcAppend);
+	// 	}
+  //       elements.homeVideo.trigger('play');
+  //       }
         //console.log(app.homeVideo)
         var landingLogo = document.getElementById("landing-logo");
         if(landingLogo) app.loadLogo();

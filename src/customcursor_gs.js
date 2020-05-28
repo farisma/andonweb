@@ -46,7 +46,7 @@ class Customcursor {
           //console.log("render")
           TweenMax.to(
             this.cursor,
-            0.5,
+            0.4,
             {
               x: this.mouseOffsetX,
               y: this.mouseOffsetY,
