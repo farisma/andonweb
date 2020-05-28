@@ -5,7 +5,7 @@ import ScrollMagic from "scrollmagic";
 import elements from "./variables";
 import menuAnim from "./menu";
 import scrollAnim from "./scrollanim";
-import Customcursor from "./customcursor";
+import Customcursor from "./customcursor_gs";
 import './scss/style.scss';
 gsap.registerPlugin();
 $(document).ready(function () {

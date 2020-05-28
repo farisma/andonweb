@@ -1,9 +1,15 @@
 
+import { gsap, TimelineMax, Linear, TweenMax } from "gsap";
+gsap.registerPlugin();
 class Customcursor {
-  //cursor = document.querySelector(".cursorcontainer");
   constructor() {
-    this.cursor = document.querySelector(".cursorcontainer");
-    this.mouseMove();
+      this.cursor = document.querySelector(".cursorcontainer");
+      //set initial position of cursor
+      this.mouseOffsetX = -100;
+      this.mouseOffsetY = -100;
+     // this.getMousePosition();
+      this.mouseMove();
+     
     const linkElem = document.querySelector(".logo");
     const logoElem = document.querySelector(".slide");
     const closeBtn = document.querySelector(".closeMenu");
@@ -16,7 +22,6 @@ class Customcursor {
     const teamListLinks = document.querySelectorAll(
       ".team-list-item-copy h2,.team-list-item-copy h3,.team-list-item-copy a"
     );
-    //console.log("TEaM",teamListLinks);
     this.mouseOverExpand([
       linkElem,
       logoElem,
@@ -27,24 +32,41 @@ class Customcursor {
       teamListLinks
     ]);
   }
-
+    getMousePosition() {
+        // this.cursor.setAttribute(
+        //   "style",
+        //   `top:${mouseOffsetY}px; left:${mouseOffsetX}px`
+          
+        // );
+        // document.addEventListener("mousemove", (e) => {
+    
+        //     this.mouseOffsetX = e.pageX;
+        //     this.mouseOffsetY = e.pageY;
+        // });
+        
+    }
   mouseMove() {
-    // let cursor = document.querySelector(".cursorcontainer");
-   //console.log("THIS",this.cursor);
-    
-    let mouseOffsetX;
-    let mouseOffsetY;
+   
     document.addEventListener("mousemove", (e) => {
-    
-      mouseOffsetX = e.clientX;
-      mouseOffsetY = e.clientY;
-      console.log(mouseOffsetX, mouseOffsetY);
-      this.cursor.setAttribute(
-        "style",
-        //`top:${mouseOffsetY}px; left:${mouseOffsetX}px`
-        `transform:translate3d(${mouseOffsetX},${mouseOffsetY})`
-      );
+      this.mouseOffsetX = e.pageX;
+      this.mouseOffsetY = e.pageY;
     });
+    
+      const render = () => {
+          TweenMax.to(
+            this.cursor,
+            0.4,
+            {
+              x: this.mouseOffsetX,
+              y: this.mouseOffsetY,
+              ease: "power3.Out",
+            },
+            0
+          );
+        requestAnimationFrame(render);
+      };
+     requestAnimationFrame(render);
+
   }
   mouseOverExpand(elem) {
     elem.forEach((element) => {
