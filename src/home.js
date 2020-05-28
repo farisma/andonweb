@@ -1,5 +1,5 @@
 import 'jquery';
-import { gsap, TimelineMax, Linear }  from "gsap";
+import { gsap, TimelineMax, Linear, set }  from "gsap";
 import elements from './variables';
 import common from './general';
 import menuAnim from './menu';
@@ -11,7 +11,9 @@ var app = {
       "current_year"
     ).textContent = new Date().getFullYear();
         var tl = new TimelineMax({delay:.5});
-        tl.from(
+    tl
+    .set(".invisible",{visibility:"visible"})
+      .from(
           ".g-logo",
           0.5,
           { scaleY: 0, transformOrigin: "center", ease: "power1.Out" },
