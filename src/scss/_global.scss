@@ -11,7 +11,9 @@ html {
     margin:0;
     padding:0;
 }
-
+a {
+    cursor: pointer;
+}
 body {
     padding: 0px;
     color: $black;
@@ -20,6 +22,7 @@ body {
     margin:0;
     height:100%;
     width:100%;
+    // cursor:none;
    /*transition:.5s;*/
     @media #{$mq-1000-up}{
         padding: 0;

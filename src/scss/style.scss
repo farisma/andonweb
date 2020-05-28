@@ -338,7 +338,10 @@
 
   
 .slide {
-    
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:10px;
+    padding-right:10px;
 .slide_menu {
     width:18px;
     display: block;
@@ -445,18 +448,22 @@
 }
 
 .logo-wrap {
+    position:relative;
+    z-index:26;
     display: flex;
-    width:200px;
+    width:300px;
     justify-content: start;
-    padding-left:70px;
-    padding-top:60px;
+    padding-left:60px;
+    padding-top:50px;
     @media #{$mq-992-down}
         {
             padding-left:40px;
-            padding-top:40px;
+            padding-top:30px;
         }
     .logo {
-        padding-left:38px;
+        padding:10px 0 0 28px;
+        position:relative;
+        z-index:30;
     }
 }
 .front-page-main-copy {
@@ -1187,3 +1194,31 @@ margin-bottom:50px;
     }
 }
 
+.cursorcontainer {
+    position:absolute;
+    background:#F6921E;
+    top:0;
+    left:0;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    z-index:25;
+    transition:.2s ease-out;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    visibility:visible;
+
+   &.expandonhover{
+       width:60px;
+       height:60px;
+       opacity:.4;
+       transform: translate(-20px,-20px);
+       transition: width .3s ease-in,height .3s ease-in,opacity .4s ease-out;
+   }
+   &.show {
+       visibility:visible;
+   }
+}

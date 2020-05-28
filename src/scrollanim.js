@@ -38,7 +38,7 @@ var scrollAnim = {
 
       let myScene = new ScrollMagic.Scene({
         triggerHook: "onEnter",
-        offset: 60,
+        offset: 0,
         triggerElement: item,
       })
         .setTween(scrollTween)

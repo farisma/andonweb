@@ -5,6 +5,7 @@ import ScrollMagic from "scrollmagic";
 import elements from "./variables";
 import menuAnim from "./menu";
 import scrollAnim from "./scrollanim";
+import Customcursor from "./customcursor";
 import './scss/style.scss';
 gsap.registerPlugin();
 $(document).ready(function () {
@@ -21,7 +22,7 @@ $(document).ready(function () {
                                     $this.addClass("open");
                                   }
                                 });
-      console.log("closeMenu", document.querySelector(".closeMenu"));
+      
                                document
                                  .querySelector(".closeMenu")
                                  .addEventListener("click", (e) => {
@@ -42,12 +43,10 @@ $(document).ready(function () {
                                 var lazyLoad = new LazyLoad({
                                   elements_selector: ".lazy-load",
                                 });
-  // set common menu and footer
-  menuAnim.setMenu();
-  menuAnim.setFooter();
-  // setTimeout(() => {
-  //                      elements.copyrightyear.textContent = new Date().getFullYear();     
-  //                        },500)
+                                // set common menu and footer
+                                menuAnim.setMenu();
+                                menuAnim.setFooter();
+
                                
 
                                 //  animation on load on all pages
@@ -61,9 +60,10 @@ $(document).ready(function () {
                                       elements.onscroll_elements
                                     );
                              }
-                            //alert("load")
 
-    
+                            
+  
+                         let customCursor = new Customcursor();
 
                             });
                               
