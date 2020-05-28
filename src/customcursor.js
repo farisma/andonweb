@@ -36,8 +36,8 @@ class Customcursor {
     document.addEventListener("mousemove", (e) => {
      // console.log("cursor",this.cursor);
      // this.cursor.classList.add("show");
-      mouseOffsetX = e.pageX - 10;
-      mouseOffsetY = e.pageY - 10;
+      mouseOffsetX = e.pageX;
+      mouseOffsetY = e.pageY;
       console.log(mouseOffsetX, mouseOffsetY);
       this.cursor.setAttribute(
         "style",
