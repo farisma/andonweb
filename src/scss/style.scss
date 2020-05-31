@@ -1097,6 +1097,14 @@ p{
     @include setPaddingBottom(20px);
     @include setMarginBottom(60px);
     border-bottom:.5px solid #000;
+    div:nth-child(1){
+    width:53px;
+    text-align:left;
+    }
+    div:nth-child(3){
+    width:53px;
+    text-align:right;
+    }
     a {
         font-size:11px;
         @include hurmeRegular;
