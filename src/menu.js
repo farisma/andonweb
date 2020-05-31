@@ -124,10 +124,10 @@ var menuAnim = {
             let footerElem = `
          <div class="social-icons">
                         <ul>
-                           <li><a href="#">fb</a></li>
-                            <li><a href="#">insta</a></li>
-                            <li><a href="#">yt</a></li>
-                            <li><a href="#">ln</a></li>
+                           <li><a href="https://www.instagram.com/andoncreativedesign/" target="_blank">insta</a></li>
+                            <li><a href="https://www.behance.net/andoncreative" target="_blank">be</a></li>
+                            <li><a href="https://vimeo.com/andoncreativedesign" target="_blank">vm</a></li>
+                            <li><a href="https://www.linkedin.com/company/andon-creative-design/" target="_blank">ln</a></li>
                         </ul>
                         
                     </div>

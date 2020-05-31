@@ -267,7 +267,7 @@
           .social {
               padding-top:0px;
               padding-bottom:30px;
-              width:230px;
+              width:220px;
               margin:0 auto;
               @media #{$mq-1000-down-landscape} {
               padding-bottom:15px;
@@ -278,8 +278,8 @@
                   list-style:none;
                   display: inline;
                   a{
-                      width:29px;
-                      height:28px;
+                      width:32px;
+                      height:36px;
                       display: inline-block;
                       font-size:0;
                       position: relative;
@@ -290,7 +290,7 @@
                           left:0;
                           width:100%;
                           height:100%;
-                          background-image:url('../images/social_icons_new.svg');
+                          background-image:url('../images/social_icons_v5_white.svg');
                       }
                   }
                   &:nth-child(1) a{
@@ -302,19 +302,19 @@
                   &:nth-child(2) a{
                     &:after {
                         // background-position:-110px -157px;
-                        background-position:-43px -0px;
+                        background-position:-46px -0px;
                     }
                   }
                   &:nth-child(3) a{
                     &:after {
                         // background-position:-154px -157px;
-                        background-position:-86px -0px;
+                        background-position:-92px -0px;
                     }
                   }
                   &:nth-child(4) a{
                     &:after {
                         // background-position:-196px -157px;
-                        background-position:-130px -0px;
+                        background-position:-138px -0px;
                     }
                   }
               }
@@ -583,7 +583,7 @@ p{
             z-index:10;
             @media #{$mq-1000-down}{ 
               top:12px;
-              left:12px;
+              left:21px;
             }
             h2 {
                 @include swissblackcondensed;
@@ -601,8 +601,8 @@ p{
                 }
             }
             p{
-                font-size:9px;
-                line-height:12px;
+                font-size:11px;
+                line-height:15px;
                @include swissLightCondensed;
                 letter-spacing:1px;
                 font-weight:normal;
@@ -610,10 +610,7 @@ p{
                 padding:0;
                 margin:0;
                 max-width:222px;
-                @media #{$mq-1000-down}{                  
-                    line-height:11px;   
-
-                }
+             
             }
         }
         img {
@@ -1142,7 +1139,7 @@ margin-bottom:50px;
 }
 }
 .social-icons {
-    width:135px;
+    width:180px;
     margin:0 auto 60px auto;
      @media #{$mq-1000-down} {
           margin:0 auto 30px auto;
@@ -1156,8 +1153,8 @@ margin-bottom:50px;
             padding:0 5px;
             display:inline;
             a {
-                width: 20px;
-                height: 20px;
+                width: 32px;
+                height: 35px;
                 display: inline-block;
                 font-size: 0;
                 position: relative;
@@ -1168,7 +1165,7 @@ margin-bottom:50px;
                           left:0;
                           width:100%;
                           height:100%;
-                          background-image:url('../images/social-black.svg');
+                          background-image:url('../images/social_icons_v5.svg');
                       }
             }
             &:nth-child(1) a{
@@ -1178,17 +1175,17 @@ margin-bottom:50px;
                   }
                   &:nth-child(2) a{
                     &:after {
-                        background-position:-30px -0px;
+                        background-position:-46px -0px;
                     }
                   }
                   &:nth-child(3) a{
                     &:after {
-                        background-position:-60px -0px;
+                        background-position:-92px -0px;
                     }
                   }
                   &:nth-child(4) a{
                     &:after {
-                        background-position:-90px -0px;
+                        background-position:-138px -0px;
                     }
                   }
          }
@@ -1219,7 +1216,11 @@ margin-bottom:50px;
     -moz-user-select: none;
     -ms-user-select: none;
     visibility:visible;
+    display: block;
     transform:translate(-50%,-50%);
+    @media #{$mq-1000-down} {
+       display:none;
+    }
 
    &.expandonhover{
        width:60px;

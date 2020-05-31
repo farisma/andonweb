@@ -23,6 +23,8 @@ class Customcursor {
     const teamListLinks = document.querySelectorAll(
       ".team-list-item-copy h2,.team-list-item-copy h3,.team-list-item-copy a"
     );
+    const contactpageLinks = document.querySelectorAll(".contact-content a");
+    const footerContactLinks = document.querySelectorAll(".contact-details a");
     this.mouseOverExpand([
       linkElem,
       logoElem,
@@ -31,7 +33,9 @@ class Customcursor {
       navLinks,
       boxLinks,
       teamListLinks,
-      clientList
+      clientList,
+      contactpageLinks,
+      footerContactLinks
     ]);
   }
 
