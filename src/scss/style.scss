@@ -458,7 +458,7 @@
     padding-top:50px;
     @media #{$mq-992-down}
         {
-            padding-left:40px;
+            padding-left:30px;
             padding-top:30px;
         }
     .logo {
@@ -507,7 +507,7 @@
         max-width:100%;
         width:100%;
         position: relative;
-        top:2px;
+        // top:2px;
         display: block;
     }
 }
@@ -564,6 +564,7 @@ p{
         @media #{$mq-1000-down}{
             margin-left:40px;
             margin-right:40px;
+            height:250px;
         }
         
         &:after {
@@ -588,21 +589,21 @@ p{
                 @include swissblackcondensed;
                 letter-spacing:-2px;
                 text-transform:uppercase;
-                font-size:50px;
-                line-height:40px;
+                font-size:80px;
+                line-height:80%;
                 color:#fff;
                 padding:0;
                 margin:0 0 25px 0;
                 @media #{$mq-1000-down}{                  
-                    font-size: 24px;
-                    line-height: 21px;
-                    margin:0 0 14px 0;
+                    font-size: 40px;
+                    line-height: 80%;
+                    margin:20px 0 14px 0;
                 }
             }
             p{
-                font-size:8px;
-                line-height:14px;
-                @include swissCondensed;
+                font-size:9px;
+                line-height:12px;
+               @include swissLightCondensed;
                 letter-spacing:1px;
                 font-weight:normal;
                 color:#fff;
@@ -618,6 +619,10 @@ p{
         img {
             max-width:100%;
             height:auto;
+            @media #{$mq-1000-down}{  
+             height:100%;
+             object-fit: cover;
+            }
         }
     }
     @media #{$mq-1000-down}{
@@ -639,12 +644,12 @@ p{
         margin:9px auto 60px auto;
         
         @media #{$mq-1000-down} {
-            margin: 0 40px;
+            margin: 9px 40px 60px 40px;
             grid-template-columns: 1fr 1fr;
         }
         @media #{$mq-620-down}{
             grid-template-columns: 1fr;
-            margin:9px 0 0 0;
+            margin:9px 0 60px 0;
         }
       .box{
           max-height:300px;
