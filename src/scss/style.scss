@@ -1155,11 +1155,14 @@ margin-bottom:50px;
      ul {
          padding:0;
          margin:0;
+         display:flex;
+         justify-content: space-between;
+         flex-direction: row;
          li {
              margin:0;
             list-style:none;
-            padding:0 5px;
-            display:inline;
+            padding:0 0px;
+            // display:inline;
             a {
                 width: 32px;
                 height: 35px;
