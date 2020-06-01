@@ -411,8 +411,8 @@
             letter-spacing:-2px;
             @include swissblackcondensed;
             @media #{$mq-1000-down} {
-                font-size:30px;
-                line-height:21px;
+                // font-size:30px;
+                // line-height:21px;
 
             }
             &:hover {
@@ -916,6 +916,8 @@ p{
     }
     p {
          @include innerpageintro;
+         font-size:13px;
+         line-height:21px;
          max-width:100%;
          font-weight:normal;
             @media #{$mq-760-up}{ 
@@ -923,12 +925,18 @@ p{
         }
     }
     .about-content {
-        padding-top:30px;
+        padding-top:20px;
         padding-bottom:30px;
+          @media #{$mq-1000-up}{ 
+            padding-top:30px;
+          }
         p {
             @include swissLightCondensed;
-            padding:15px 0;
-            line-height:25px;
+            padding:10px 0;
+            line-height:21px;
+             @media #{$mq-1000-up}{ 
+                padding: 15px 0;
+                }
         }
     }
 }
@@ -959,6 +967,8 @@ p{
         margin-bottom: 80px;
          @media #{$mq-1000-down} { 
                 flex-direction: column;
+                margin-bottom: 50px;
+                padding-top:0px;
             }
         
         p {
@@ -989,6 +999,7 @@ p{
                 @include innerpagesubtitle;
                @media #{$mq-1000-down} { 
                    margin-left:0;
+                   margin-bottom:10px;
                }
             }
             p{
@@ -1158,7 +1169,7 @@ margin-bottom:50px;
     width:190px;
     margin:0 auto 60px auto;
      @media #{$mq-1000-down} {
-          margin:0 auto 30px auto;
+          margin:0 auto 55px auto;
      }
      ul {
          padding:0;
