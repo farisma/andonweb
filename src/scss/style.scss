@@ -1059,8 +1059,8 @@ p{
     }
     .work-section {
          @include sidemargin-innerpage-cont;
-         background:#3c3c3f;
-         padding:80px 0 0 0;
+        //  background:#3c3c3f;
+         padding:0px;
       
          img {
              max-width:100%;
@@ -1071,16 +1071,18 @@ p{
         
     }
     .work-sec {
+        background:#3c3c3f;
+        margin-top:10px;
             text-align :center;
-            transition: all 1s ease-in-out;
-      &.three-image-grid {
+            // transition: all 1s ease-in-out;
+      .three-image-grid {
          margin:0 auto;
          display:flex;
          flex-direction: row;
          justify-content: space-between;
          width:100%;
-         max-width:800px;
-         padding:0px 60px;
+         max-width:812px;
+         padding:60px 60px;
           @media #{$mq-1000-down} {
               flex-direction: column;
               align-items: center;
@@ -1092,14 +1094,120 @@ p{
                 }
           }
       }
-      &.ptop {
+      &.ptop120 {
         @include setPaddingTop(120px);
       }
-      &.magazine {
+      .ptop50 {
           @include setPaddingTop(50px);
+      }
+      .mex_fb {
+          padding-top:60px;
+      }
+      .ed_fb {
+          padding-top:60px;
       }
     }
 }
+}
+.ed-video{
+    padding-top:50px;
+    padding-bottom:50px;
+    
+     @media #{$mq-1000-up} {
+            padding-top:80px;
+            padding-bottom:80px;
+        }
+    .video-cont {
+        position: relative;
+       
+        width:320px;
+        height:238px;
+        margin:0 auto;
+         @media #{$mq-760-up} {
+       
+        width:450px;
+        height:334px;
+        }
+        @media #{$mq-1000-up} {
+             
+              width:602px;
+              height:442px;
+        }
+        .video-tn{
+            visibility:hidden;
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+             background:url(../images/tn.png);
+             background-size: 320px 238px;
+             background-repeat: no-repeat;
+               @media #{$mq-760-up} {
+                background-size: 450px 334px;
+               }
+              @media #{$mq-1000-up} {
+             background:url(../images/tn@2x.png);
+              background-size: 602px 442px;
+              }
+              .video-play-btn {
+                  width:70px;
+                  height:70px;
+                //   background:#ccc;
+                  opacity:0.5;
+                  position: absolute;
+                 
+                  background:url("../images/pause-white.svg");
+                  z-index:20;
+                  cursor: pointer;
+                  &.pause {
+                         top:50%;  
+                         left:50%;            
+                        transform: translate(-50%,-50%);
+                        visibility: visible;
+                        background:url("../images/pause-white.svg");
+
+                    }
+                    &.play {
+                         top:50%;  
+                         left:50%;            
+                        transform: translate(-50%,-50%);
+                        visibility: visible;
+                        background:url("../images/play-white.svg")
+                    }
+              }
+              &.show{
+                  visibility: visible;
+                .video-play-btn {
+                  &.play {
+                    top:40%;
+                    left:50%;
+                    transform: translate(-50%,-40%);
+                     visibility: visible;
+                     background:none;
+                  }
+                }
+
+              }
+               
+            
+        }
+        .videoPlayer{
+            visibility:hidden;
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+             video {
+                 width:100%;
+                 height:100%;
+             }
+            &.show {
+                visibility:visible;
+            }
+           }
+    }
 }
 .border-bottom-line {
     border-bottom:1px solid #fff;

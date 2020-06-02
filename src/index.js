@@ -6,6 +6,7 @@ import elements from "./variables";
 import menuAnim from "./menu";
 import scrollAnim from "./scrollanim";
 import Customcursor from "./customcursor_gs";
+import Video from "./video";
 import './scss/style.scss';
 gsap.registerPlugin();
 $(document).ready(function () {
@@ -62,8 +63,21 @@ $(document).ready(function () {
                              }
 
                             
+  //creating new object for custom cursor
+  let customCursor = new Customcursor();
+// for video in emirates delivers
+  const videoPlayBtn = document.querySelector(".video-play-btn"); // playbutton
+  const videoTn = document.querySelector(".video-tn"); // thumbnail
+  const videoPlayer = document.querySelector(".videoPlayer"); //videotag container
+  const videoElem = document.getElementById("edVideo"); // video tag
+  if (videoPlayBtn !== null || this.videoPlayBtn !== undefined) { let videoPlay = new Video(
+                                                                    videoPlayBtn,
+                                                                    videoTn,
+                                                                    videoPlayer,
+                                                                    videoElem
+                                                                  ); }
   
-                         let customCursor = new Customcursor();
+// video play/pause in continer
 
                             });
                               

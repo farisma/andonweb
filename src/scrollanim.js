@@ -26,19 +26,34 @@ var scrollAnim = {
       });
   },
   animateOnScroll: function (elem) {
+   // console.log(elem)
     const controller = new ScrollMagic.Controller();
     const elementsToScroll = elem;
     console.log("scroll", elementsToScroll);
+     var offset, hook;
     elementsToScroll.forEach((item) => {
-      console.log(item);
+      console.log("scrollitem", item);
+      // if (item.hasAttribute("data-offset")) {
+      //   offset = item.getAttribute("data-offset");
+      // }
+      // else {
+      //   offset = 0;
+      // }
+      item.hasAttribute("data-offset")
+        ? (offset = item.getAttribute("data-offset"))
+        : (offset = 0);
+      item.hasAttribute("data-hook")
+           ? (hook = item.getAttribute("data-hook"))
+           : (hook = "onEnter");
+      //  console.log("offfset", item.getAttribute("data-offset"));
       let scrollTween = TweenMax.from(item, 1, {
         y: 80,
         ease: "Power4.easeOut",
       });
 
       let myScene = new ScrollMagic.Scene({
-        triggerHook: "onEnter",
-        offset: 0,
+        triggerHook: hook,
+        offset: offset,
         triggerElement: item,
       })
         .setTween(scrollTween)

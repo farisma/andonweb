@@ -17,7 +17,7 @@ var elements = {
   anim_onLoad: document.querySelector("div.pageanimonload"),
   innerpage_footer: document.querySelector("div.innerpage-footer"),
   onscroll_elements: document.querySelectorAll(
-    ".animateToTop,.box,.team-list-item"
+    ".animateToTop,.box,.team-list-item,.work-sec"
   ),
   work_section: document.querySelectorAll(".worksecAnim"),
 };

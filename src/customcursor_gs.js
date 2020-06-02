@@ -16,6 +16,7 @@ class Customcursor {
     const footerIcons = document.querySelectorAll(".social-icons ul");
     const navLinks = document.querySelectorAll("#menu ul li.nav-item");
     const clientList = document.querySelectorAll(".client-list-item");
+    const videoPlayBtn = document.querySelector(".video-play-btn");
     const boxLinks = document.querySelectorAll(
       ".box-copy h2,.box-copy h3,.box-copy a"
     );
@@ -25,6 +26,7 @@ class Customcursor {
     );
     const contactpageLinks = document.querySelectorAll(".contact-content a");
     const footerContactLinks = document.querySelectorAll(".contact-details a");
+    const workPageLinks = document.querySelectorAll(".page-navigation-links div a");
     this.mouseOverExpand([
       linkElem,
       logoElem,
@@ -35,7 +37,9 @@ class Customcursor {
       teamListLinks,
       clientList,
       contactpageLinks,
-      footerContactLinks
+      footerContactLinks,
+      workPageLinks,
+      videoPlayBtn
     ]);
   }
 
