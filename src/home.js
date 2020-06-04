@@ -112,7 +112,7 @@ var app = {
         return videoPaths;
        },
        getFormat:function(video){
-        var filetype = video.split('.')[1];
+        var filetype = video.split('.')[2];
         return filetype;
        }
 }

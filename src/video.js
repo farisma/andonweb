@@ -12,13 +12,16 @@ class Video {
         
     }
 
-    videoInit() {
-        this.videoPlayBtn.addEventListener("click", this.playVideo.bind(this));
+  videoInit() {
+    
+        this.videoPlayBtn.addEventListener(
+          "click",
+          this.playVideo.bind(this, event)
+        );
         //this.videoPlayBtn.addEventListener("click", this.playVideo.bind(this));
     }
 
     playVideo() {
-
         this.togglePlayPause();
         if (this.videoElem.paused) this.startVideo();
         else this.videoElem.pause();
@@ -52,8 +55,10 @@ class Video {
              var vidsrc = videoElem.getAttribute("data-vid-src");
              var videoURL = this.getVideoURL(vidsrc);
              var videoSrcAppend = "";
-             videoURL.forEach( (item) => {
+             videoURL.forEach((item) => {
+               console.log("videoformat", item);
                var videoFormat = this.getFormat(item);
+               
                if (videoFormat == "mp4") {
                  videoSrcAppend +=
                    '<source src="' + item + '" type="video/mp4">';
@@ -76,8 +81,9 @@ class Video {
         var videoPaths = videoSrc.split('|');
         return videoPaths;
        }
-     getFormat(video){
-        var filetype = video.split('.')[1];
+  getFormat(video) {
+       //console.log("split",video.split("."));
+        var filetype = video.split('.')[2];
         return filetype;
        }
 }
