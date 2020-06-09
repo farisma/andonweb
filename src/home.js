@@ -80,7 +80,7 @@ var app = {
               tl.to(
                 elements.wrapper,
                 0.75,
-                { top: slideDistance, ease: "power1.out" /*Linear.easeNone*/ },
+                { y: -120, ease: "power1.out" /*Linear.easeNone*/ },
                 "index"
               )
                 .to(
