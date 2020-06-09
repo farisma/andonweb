@@ -72,14 +72,15 @@ var app = {
         var that = common;
            alert(
              "innerHeight" + window.innerHeight + "outer" + window.outerHeight
-           );
+      );
+      let slideDistance = window.innerHeight - 120;
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
            {
             var tl = new TimelineMax();  
               tl.to(
                 elements.wrapper,
                 0.75,
-                { y: -120, ease: "power1.out" /*Linear.easeNone*/ },
+                { top: slideDistance, ease: "power1.out" /*Linear.easeNone*/ },
                 "index"
               )
                 .to(
