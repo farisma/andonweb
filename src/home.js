@@ -1,4 +1,4 @@
-import 'jquery';
+//import 'jquery';
 import { gsap, TimelineMax, Linear, set }  from "gsap";
 import elements from './variables';
 import common from './general';
@@ -70,7 +70,9 @@ var app = {
     },
     slideDown: function() {
         var that = common;
-      
+           alert(
+             "innerHeight" + window.innerHeight + "outer" + window.outerHeight
+           );
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
            {
             var tl = new TimelineMax();  
@@ -98,7 +100,7 @@ var app = {
                   {
                     autoAlpha: 1,
                     ease: "power1.out",
-                    onComplete: menuAnim.alignMenu.bind(menuAnim),
+                    // onComplete: menuAnim.setMenu.bind(menuAnim),
                   },
                   "+=0.1"
                 );
@@ -117,36 +119,32 @@ var app = {
        }
 }
 
-$(window).on('load',function () { 
-    //alert('load')
-   
-    var videoElem = document.getElementById("homeVideo");
-   if(videoElem) {
-		if (elements.homeVideo.children().length == 0) {
-			var vidsrc = elements.homeVideo.data('vid-src');
-			var videoURL = app.getVideoURL(vidsrc);
-			var videoSrcAppend = '';
-			videoURL.forEach(function (item) {
-				var videoFormat = app.getFormat(item);
-				if (videoFormat == "mp4") {
-					videoSrcAppend += '<source src="' + item + '" type="video/mp4">';
-				}
-				else if (videoFormat == "webm") {
-					videoSrcAppend += '<source src="' + item + '" type="video/webm">';
-				}
-				else {
-					videoSrcAppend += '<source src="' + item + '" type="video/ogg">';
-				}
-			});
-			elements.homeVideo.html('');
-			elements.homeVideo.append(videoSrcAppend);
-		}
-        elements.homeVideo.trigger('play');
+window.addEventListener("load", function () {
+  //alert('load')
+
+  var videoElem = document.getElementById("homeVideo");
+  if (videoElem) {
+    if (videoElem.children.length === 0) {
+      var vidsrc = videoElem.getAttribute("data-vid-src");
+      var videoURL = app.getVideoURL(vidsrc);
+      var videoSrcAppend = "";
+      videoURL.forEach(function (item) {
+        var videoFormat = app.getFormat(item);
+        if (videoFormat == "mp4") {
+          videoSrcAppend += '<source src="' + item + '" type="video/mp4">';
+        } else if (videoFormat == "webm") {
+          videoSrcAppend += '<source src="' + item + '" type="video/webm">';
+        } else {
+          videoSrcAppend += '<source src="' + item + '" type="video/ogg">';
         }
-        //console.log(app.homeVideo)
-        var landingLogo = document.getElementById("landing-logo");
-        if(landingLogo) app.loadLogo();
-        
-       
-       
+      });
+      //	elements.homeVideo.html('');
+      videoElem.innerHTML = videoSrcAppend;
+      //	elements.homeVideo.append(videoSrcAppend);
+    }
+    videoElem.play();
+  }
+  //console.log(app.homeVideo)
+  var landingLogo = document.getElementById("landing-logo");
+  if (landingLogo) app.loadLogo();
 });

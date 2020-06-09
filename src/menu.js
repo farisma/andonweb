@@ -1,4 +1,4 @@
-import 'jquery';
+//import 'jquery';
 import { gsap, TimelineMax, Linear }  from "gsap";
 import elements from './variables';
 import common from './general';
@@ -9,8 +9,8 @@ var menuAnim = {
     },
     setMenuMargin: function(){
         let menu = document.getElementById("menu");
-        var offset_top = $(elements.front_page_image).offset().top;
-         console.log(menu.children[1]);
+        var offset_top = elements.front_page_image.offsetTop;
+         console.log(menu.children[1], offset_top);
         menu.children[1].style.marginTop = offset_top;
             //('margin-top',offset_top);
             //console.log(offset_top)
@@ -26,7 +26,8 @@ var menuAnim = {
         return WinH - footerHeight;
     },
     slideMenu: function(){          
-           elements.menu.classList.add('show');           
+        elements.menu.classList.add('show');  
+        
            var tl = new TimelineMax();
            console.log("hi")
            var menuWidth = this.findMenuWidth();
@@ -59,6 +60,11 @@ var menuAnim = {
        that.setMenuMargin();
     },
     setMenu: function () {
+        // let offset_top;
+        // if (elements.front_page_image) {
+        //     offset_top = elements.front_page_image.getBoundingClientRect().top;
+        // }
+       
         let arrayLinks = [];
         // arrayLinks["index.html"] = "";
         // arrayLinks["works.html"] = "";
@@ -95,8 +101,9 @@ var menuAnim = {
         //     console.log("item",item);
         // })
        // if()
-        let innerMenu = `
-        <ul>
+      
+            let innerMenu = `
+        <ul class="menuListCont">
              <li class="nav-item ${arrayLinks["works.html"]}">
                  <a href="works.html"> Our work</a>
              </li>
@@ -115,7 +122,18 @@ var menuAnim = {
             </ul>
            
         `;
-        menu.innerHTML += innerMenu;
+            menu.innerHTML += innerMenu;
+        
+        // else {
+        //     if (offset_top) {
+        //         document
+        //                       .querySelector(".menuListCont")
+        //                       .setAttribute(
+        //                         "style",
+        //                         `margin-top:${offset_top}px`
+        //                       );}
+            
+        // }
         
     },
     setFooter:function() {

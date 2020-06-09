@@ -21,7 +21,8 @@ class Video {
         //this.videoPlayBtn.addEventListener("click", this.playVideo.bind(this));
     }
 
-    playVideo() {
+  playVideo(test) {
+     
         this.togglePlayPause();
         if (this.videoElem.paused) this.startVideo();
         else this.videoElem.pause();

@@ -70,15 +70,17 @@ class Customcursor {
   mouseOverExpand(elem) {
     elem.forEach((element) => {
       // if the elments are an array
-      if (element.length) {         
-         element.forEach((item) => {
-           this.animateCursor(item);
-         });       
-      }
-      // if not an array
-      else if(element.length === undefined){
-          this.animateCursor(element);       
-      }
+      if(element) {
+                    if (element.length) {
+                      element.forEach((item) => {
+                        this.animateCursor(item);
+                      });
+                    }
+                    // if not an array
+                    else if (element.length === undefined) {
+                      this.animateCursor(element);
+                    }
+                  }
     });
   }
 

@@ -10,11 +10,11 @@ module.exports = {
   mode: "development",
   entry: {
     index: "./src/index.js",
-    menu: "./src/menu.js",
+    // menu: "./src/menu.js",
     home: "./src/home.js",
     team: "./src/team.js",
-    map: "./src/map.js",
-    workanim: "./src/workanim.js",
+    // map: "./src/map.js",
+    // workanim: "./src/workanim.js",
   },
   output: {
     filename: "js/[name].bundle.js",
@@ -37,10 +37,10 @@ module.exports = {
     //   include: "src/*.js",
     // }
 
-    new Webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-    }),
+    // new Webpack.ProvidePlugin({
+    //   $: "jquery",
+    //   jQuery: "jquery",
+    // }),
     /* new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({
         filename: 'index.html',

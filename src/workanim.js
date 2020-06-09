@@ -1,6 +1,6 @@
 /** @format */
 
-import "jquery";
+//import "jquery";
 import { gsap, TweenMax, TimelineMax } from "gsap";
 import ScrollMagic from "scrollmagic";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";

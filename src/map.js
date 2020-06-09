@@ -179,12 +179,12 @@ const mapStyle = [
 
 class Map {
   // const mapStyles
-  static loadGoogleMapsApi() {
+   loadGoogleMapsApi() {
     return loadGoogleMapsApi({
       key: "AIzaSyByr7vAKrvAJzB41lN9InrG7UKQHmFT76c",
     });
   }
-  static createMap(googleMaps, mapElement) {
+   createMap(googleMaps, mapElement) {
     return new googleMaps.Map(mapElement, {
       center: { lat: 25.068612, lng: 55.145069 },
       zoom: 12,
@@ -199,7 +199,7 @@ class Map {
     });
   }
 
-  static addMarker(googleMaps, resultMap) {
+   addMarker(googleMaps, resultMap) {
     return new googleMaps.Marker({
       position: { lat: 25.068612, lng: 55.145069 },
       icon: "images/mapmarker.svg",
@@ -207,13 +207,13 @@ class Map {
     });
   }
 }
-//export { Map };
-document.addEventListener("DOMContentLoaded", function () {
-  let mapElement = document.getElementById("map");
+export default Map;
+// document.addEventListener("DOMContentLoaded", function () {
+//   let mapElement = document.getElementById("map");
 
-  Map.loadGoogleMapsApi().then(function (googleMaps) {
-      let resultMap = Map.createMap(googleMaps, mapElement);
+//   Map.loadGoogleMapsApi().then(function (googleMaps) {
+//       let resultMap = Map.createMap(googleMaps, mapElement);
       
-      Map.addMarker(googleMaps, resultMap);
-  });
-});
+//       Map.addMarker(googleMaps, resultMap);
+//   });
+// });
