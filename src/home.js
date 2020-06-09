@@ -73,7 +73,7 @@ var app = {
            alert(
              "innerHeight" + window.innerHeight + "outer" + window.outerHeight
       );
-      let slideDistance = window.innerHeight - 120;
+      let slideDistance = window.innerHeight;// - 120;
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
            {
             var tl = new TimelineMax();  
@@ -148,4 +148,8 @@ window.addEventListener("load", function () {
   //console.log(app.homeVideo)
   var landingLogo = document.getElementById("landing-logo");
   if (landingLogo) app.loadLogo();
+
+  if (window.innerWidth < 1000) {
+    document.querySelector(".intro-video").setAttribute("style",`${window.innerHeight}px;`);
+  }
 });
