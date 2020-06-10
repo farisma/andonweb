@@ -3,12 +3,10 @@ import { gsap, TimelineMax, Linear, set }  from "gsap";
 import elements from './variables';
 import common from './general';
 import menuAnim from './menu';
-import { TweenMax } from "gsap/gsap-core";
 
 gsap.registerPlugin();
 var app = {
   loadLogo: function () {
-   
     document.getElementById(
       "current_year"
     ).textContent = new Date().getFullYear();
@@ -75,35 +73,26 @@ var app = {
       //      alert(
       //        "innerHeight" + window.innerHeight + "outer" + window.outerHeight
       // );
-       // - 120;
-       let slideDistance = document
-         .querySelector(".front-page-footer")
-        .getBoundingClientRect().top;
-      // let logoSlideDistance = window.innerHeight - slideDistance;
-      let logoSlideDistance =
-        document.body.getBoundingClientRect().height - slideDistance;
+      let slideDistance = window.innerHeight;// - 120;
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
            {
             var tl = new TimelineMax();  
               tl.to(
                 elements.wrapper,
                 0.75,
-                {
-                  y: -logoSlideDistance,
-                  ease: "power1.out" /*Linear.easeNone*/,
-                },
+                { y: -120, ease: "power1.out" /*Linear.easeNone*/ },
                 "index"
-              ) // top: slideDistance
+              )
                 .to(
                   [elements.introContent, ".landing-logo", ".no-g"],
                   0.5,
                   { autoAlpha: 0, ease: "power1.out" },
                   "-=0.1"
                 )
-                .from(
+                .to(
                   elements.logo_menu_frontpage,
                   0.5,
-                  { y: -40, ease: "power1.out" },
+                  { y: 120, ease: "power1.out" },
                   "-=0.75"
                 )
                 .to(
@@ -120,22 +109,7 @@ var app = {
            }
            
              
-  },
-  setContentSlideTop: function(){
-      let slideDistance = document
-        .querySelector(".front-page-footer")
-        .getBoundingClientRect().top;
-      // let logoSlideDistance = window.innerHeight - slideDistance;
-      let logoSlideDistance =
-        document.body.getBoundingClientRect().height - slideDistance;
-    TweenMax.to(
-      elements.wrapper,
-      0.75,
-      { y: -logoSlideDistance, ease: "power1.out" /*Linear.easeNone*/ },
-      "index"
-    );
-    
-  },
+   },
     getVideoURL:function(videoSrc){
         var videoPaths = videoSrc.split('|');
         return videoPaths;
@@ -175,14 +149,7 @@ window.addEventListener("load", function () {
   var landingLogo = document.getElementById("landing-logo");
   if (landingLogo) app.loadLogo();
 
-  // if (window.innerWidth < 1000) {
-  //   document.querySelector(".intro-video").setAttribute("style", `min-height:${window.innerHeight - 80}px;`);
-  //   document
-  //     .querySelector(".fullscreen-vide-wrap")
-  //     .setAttribute("style", `height:${window.innerHeight - 80}px;`);
-  // }
-});
-
-window.addEventListener("resize", function () {
-  app.setContentSlideTop();
+  if (window.innerWidth < 1000) {
+    document.querySelector(".intro-video").setAttribute("style",`${window.innerHeight}px;`);
+  }
 });

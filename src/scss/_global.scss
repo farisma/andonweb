@@ -1,9 +1,6 @@
 html {
     box-sizing: border-box;
     font-size: 100%;
-//      @media #{$mq-1000-down-portrait} {
-//   overflow-y:hidden;
-//      }
 }
 
  *:before, *:after {
@@ -25,9 +22,6 @@ body {
     margin:0;
     height:100%;
     width:100%;
-    //  @media #{$mq-1000-down}{
-    //  overflow-y:hidden;
-    //  }
     // cursor:none;
    /*transition:.5s;*/
     @media #{$mq-1000-up}{
