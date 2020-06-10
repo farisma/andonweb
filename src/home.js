@@ -94,12 +94,12 @@ var app = {
                   { autoAlpha: 0, ease: "power1.out" },
                   "-=0.1"
                 )
-                .to(
-                  elements.logo_menu_frontpage,
-                  0.5,
-                  { top: logoSlideDistance, ease: "power1.out" },
-                  "-=0.75"
-                )
+                // .to(
+                //   elements.logo_menu_frontpage,
+                //   0.5,
+                //   { y: logoSlideDistance, ease: "power1.out" },
+                //   "-=0.75"
+                // )
                 .to(
                   elements.footerContent,
                   0.5,

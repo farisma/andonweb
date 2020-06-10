@@ -486,6 +486,9 @@
         position:relative;
         z-index:30;
     }
+    &.front-page-logo-wrap {
+        top:120px;
+    }
 }
 .front-page-main-copy {
     width:100%;
