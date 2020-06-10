@@ -122,12 +122,16 @@ var app = {
              
   },
   setContentSlideTop: function(){
-     let slideDistance = document
-       .querySelector(".front-page-footer")
-      .getBoundingClientRect().top;
-    TweenMax.to(elements.wrapper,
+      let slideDistance = document
+        .querySelector(".front-page-footer")
+        .getBoundingClientRect().top;
+      // let logoSlideDistance = window.innerHeight - slideDistance;
+      let logoSlideDistance =
+        document.body.getBoundingClientRect().height - slideDistance;
+    TweenMax.to(
+      elements.wrapper,
       0.75,
-      { top: slideDistance, ease: "power1.out" /*Linear.easeNone*/ },
+      { y: -logoSlideDistance, ease: "power1.out" /*Linear.easeNone*/ },
       "index"
     );
     
