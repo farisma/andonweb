@@ -7,6 +7,7 @@ import menuAnim from './menu';
 gsap.registerPlugin();
 var app = {
   loadLogo: function () {
+   
     document.getElementById(
       "current_year"
     ).textContent = new Date().getFullYear();
@@ -73,14 +74,17 @@ var app = {
       //      alert(
       //        "innerHeight" + window.innerHeight + "outer" + window.outerHeight
       // );
-      let slideDistance = window.innerHeight;// - 120;
+     // let slideDistance = window.innerHeight;// - 120;
+       let slideDistance = document
+         .querySelector(".front-page-footer")
+         .getBoundingClientRect().top;
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
            {
             var tl = new TimelineMax();  
               tl.to(
                 elements.wrapper,
                 0.75,
-                { y: -120, ease: "power1.out" /*Linear.easeNone*/ },
+                { top: slideDistance, ease: "power1.out" /*Linear.easeNone*/ },
                 "index"
               )
                 .to(
