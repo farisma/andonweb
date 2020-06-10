@@ -489,7 +489,7 @@
     &.front-page-logo-wrap {
         top:120px;
          @media #{$mq-1000-down} {
-            top:170px;
+            top:200px;
          }
     }
 }
@@ -1351,6 +1351,9 @@ margin-bottom:50px;
     #menu {
             transform: translateY(120px);
             background:none;
+            @media #{$mq-1000-down} {
+            transform:translateY(200px);
+         } 
         
     }
 }
