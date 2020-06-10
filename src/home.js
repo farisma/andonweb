@@ -70,9 +70,9 @@ var app = {
     },
     slideDown: function() {
         var that = common;
-           alert(
-             "innerHeight" + window.innerHeight + "outer" + window.outerHeight
-      );
+      //      alert(
+      //        "innerHeight" + window.innerHeight + "outer" + window.outerHeight
+      // );
       let slideDistance = window.innerHeight;// - 120;
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
            {
@@ -150,6 +150,6 @@ window.addEventListener("load", function () {
   if (landingLogo) app.loadLogo();
 
   if (window.innerWidth < 1000) {
-    document.querySelector(".intro-video").setAttribute("style",`${window.innerHeight}px;`);
+    document.querySelector(".intro-video").setAttribute("style",`height:${window.innerHeight}px;`);
   }
 });

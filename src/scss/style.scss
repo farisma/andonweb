@@ -126,6 +126,9 @@
     display:flex;
   align-items:center;
   color:#fff;
+//    @media #{$mq-1000-down} {
+//         min-height:calc(100vh - 30px);
+//    }
   .fullscreen-vide-wrap{
     height:100vh;
     overflow: hidden;
