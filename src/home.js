@@ -81,7 +81,7 @@ var app = {
         .getBoundingClientRect().top;
       // let logoSlideDistance = window.innerHeight - slideDistance;
       let logoSlideDistance =
-        document.querySelector('.intro-video').getBoundingClientRect().height - slideDistance;
+        document.body.getBoundingClientRect().height - slideDistance;
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
            {
             var tl = new TimelineMax();  
