@@ -150,7 +150,7 @@ window.addEventListener("load", function () {
   if (landingLogo) app.loadLogo();
 
   if (window.innerWidth < 1000) {
-    document.querySelector(".intro-video").setAttribute("style", `height:${window.innerHeight - 80}px;`);
+    document.querySelector(".intro-video").setAttribute("style", `min-height:${window.innerHeight - 80}px;`);
     document
       .querySelector(".fullscreen-vide-wrap")
       .setAttribute("style", `height:${window.innerHeight - 80}px;`);
