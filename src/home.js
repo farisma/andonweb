@@ -74,10 +74,11 @@ var app = {
       //      alert(
       //        "innerHeight" + window.innerHeight + "outer" + window.outerHeight
       // );
-     // let slideDistance = window.innerHeight;// - 120;
+       // - 120;
        let slideDistance = document
          .querySelector(".front-page-footer")
-         .getBoundingClientRect().top;
+        .getBoundingClientRect().top;
+       let logoSlideDistance = window.innerHeight - slideDistance;
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
            {
             var tl = new TimelineMax();  
@@ -96,7 +97,7 @@ var app = {
                 .to(
                   elements.logo_menu_frontpage,
                   0.5,
-                  { top: 120, ease: "power1.out" },
+                  { top: logoSlideDistance, ease: "power1.out" },
                   "-=0.75"
                 )
                 .to(
