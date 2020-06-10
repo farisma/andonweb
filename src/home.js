@@ -79,7 +79,9 @@ var app = {
        let slideDistance = document
          .querySelector(".front-page-footer")
         .getBoundingClientRect().top;
-       let logoSlideDistance = window.innerHeight - slideDistance;
+      // let logoSlideDistance = window.innerHeight - slideDistance;
+      let logoSlideDistance =
+        document.querySelector('.intro-video').getBoundingClientRect().height - slideDistance;
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
            {
             var tl = new TimelineMax();  
