@@ -488,7 +488,7 @@
     }
     &.front-page-logo-wrap {
         top:120px;
-         @media #{$mq-1000-down} {
+         @media #{$mq-1000-down-portrait} {
             top:200px;
          }
     }
@@ -1351,7 +1351,7 @@ margin-bottom:50px;
     #menu {
             transform: translateY(120px);
             background:none;
-            @media #{$mq-1000-down} {
+            @media #{$mq-1000-down-portrait} {
             transform:translateY(200px);
          } 
         
