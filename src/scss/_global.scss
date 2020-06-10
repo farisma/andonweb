@@ -1,6 +1,9 @@
 html {
     box-sizing: border-box;
     font-size: 100%;
+     @media #{$mq-1000-down-portrait} {
+  overflow-y:hidden;
+     }
 }
 
  *:before, *:after {

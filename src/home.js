@@ -3,6 +3,7 @@ import { gsap, TimelineMax, Linear, set }  from "gsap";
 import elements from './variables';
 import common from './general';
 import menuAnim from './menu';
+import { TweenMax } from "gsap/gsap-core";
 
 gsap.registerPlugin();
 var app = {
@@ -87,19 +88,19 @@ var app = {
                 0.75,
                 { top: slideDistance, ease: "power1.out" /*Linear.easeNone*/ },
                 "index"
-              )
+              ) // top: slideDistance
                 .to(
                   [elements.introContent, ".landing-logo", ".no-g"],
                   0.5,
                   { autoAlpha: 0, ease: "power1.out" },
                   "-=0.1"
                 )
-                // .to(
-                //   elements.logo_menu_frontpage,
-                //   0.5,
-                //   { y: logoSlideDistance, ease: "power1.out" },
-                //   "-=0.75"
-                // )
+                .from(
+                  elements.logo_menu_frontpage,
+                  0.5,
+                  { y: -40, ease: "power1.out" },
+                  "-=0.75"
+                )
                 .to(
                   elements.footerContent,
                   0.5,
@@ -114,7 +115,18 @@ var app = {
            }
            
              
-   },
+  },
+  setContentSlideTop: function(){
+     let slideDistance = document
+       .querySelector(".front-page-footer")
+      .getBoundingClientRect().top;
+    TweenMax.to(elements.wrapper,
+      0.75,
+      { top: slideDistance, ease: "power1.out" /*Linear.easeNone*/ },
+      "index"
+    );
+    
+  },
     getVideoURL:function(videoSrc){
         var videoPaths = videoSrc.split('|');
         return videoPaths;
@@ -160,4 +172,8 @@ window.addEventListener("load", function () {
   //     .querySelector(".fullscreen-vide-wrap")
   //     .setAttribute("style", `height:${window.innerHeight - 80}px;`);
   // }
+});
+
+window.addEventListener("resize", function () {
+  app.setContentSlideTop();
 });
