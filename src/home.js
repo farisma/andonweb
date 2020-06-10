@@ -86,7 +86,10 @@ var app = {
               tl.to(
                 elements.wrapper,
                 0.75,
-                { top: slideDistance, ease: "power1.out" /*Linear.easeNone*/ },
+                {
+                  y: -logoSlideDistance,
+                  ease: "power1.out" /*Linear.easeNone*/,
+                },
                 "index"
               ) // top: slideDistance
                 .to(
