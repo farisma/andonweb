@@ -96,7 +96,7 @@ var app = {
                 .to(
                   elements.logo_menu_frontpage,
                   0.5,
-                  { y: 120, ease: "power1.out" },
+                  { top: 120, ease: "power1.out" },
                   "-=0.75"
                 )
                 .to(
