@@ -488,6 +488,9 @@
     }
     &.front-page-logo-wrap {
         top:120px;
+         @media #{$mq-1000-down} {
+            top:170px;
+         }
     }
 }
 .front-page-main-copy {
