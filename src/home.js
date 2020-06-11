@@ -125,17 +125,15 @@ var app = {
         return filetype;
   },
   alignHomePageCTA_Y: function () {
-    const logoElemOffsetTop = document.querySelector(elements.logo_menu_frontpage).offsetTop;
-    const logoElemHeight = document.querySelector(
+    const logoElemOffsetTop = parseInt(document.querySelector(elements.logo_menu_frontpage).offsetTop);
+    const logoElemHeight =  parseInt(document.querySelector(
       elements.logo_menu_frontpage
-    ).offsetHeight;
-
-    const mainTextOffset = elements.front_page_image.offsetTop;
-    const gapbetween =
-      parseInt(mainTextOffset) -
-      (parseInt(logoElemOffsetTop) +
-        parseInt(logoElemHeight));
-    return gapbetween / 2;
+    ).offsetHeight);
+    const heightCTAHalf = parseInt(elements.homepage_cta.offsetHeight) / 2;
+    const mainTextOffset = parseInt(elements.front_page_image.offsetTop);
+    const offsetTop =
+      ((mainTextOffset - (logoElemOffsetTop + logoElemHeight))/2) - heightCTAHalf;
+    return offsetTop;
   },
   alignHomePageCTA_X: function () {
     const mainTextOffsetLeft = parseInt(elements.front_page_image.offsetLeft);
