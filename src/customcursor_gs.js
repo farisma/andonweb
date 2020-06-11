@@ -27,6 +27,7 @@ class Customcursor {
     const contactpageLinks = document.querySelectorAll(".contact-content a");
     const footerContactLinks = document.querySelectorAll(".contact-details a");
     const workPageLinks = document.querySelectorAll(".page-navigation-links div a");
+    const homeCta = document.querySelector(".home_cta");
     this.mouseOverExpand([
       linkElem,
       logoElem,
@@ -39,7 +40,8 @@ class Customcursor {
       contactpageLinks,
       footerContactLinks,
       workPageLinks,
-      videoPlayBtn
+      videoPlayBtn,
+      homeCta
     ]);
   }
 

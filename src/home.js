@@ -95,6 +95,12 @@ var app = {
                   { y: 120, ease: "power1.out" },
                   "-=0.75"
                 )
+                .fromTo(
+                  elements.homepage_cta,
+                  0.5,
+                  { y: -25, autoAlpha:0,ease: "power1.out" },{y: 0, autoAlpha:1,ease: "power1.out" },
+                  "-=0.5"
+                )
                 .to(
                   elements.footerContent,
                   0.5,
@@ -114,14 +120,52 @@ var app = {
         var videoPaths = videoSrc.split('|');
         return videoPaths;
        },
-       getFormat:function(video){
+    getFormat:function(video){
         var filetype = video.split('.')[2];
         return filetype;
-       }
+  },
+  alignHomePageCTA_Y: function () {
+    const logoElemOffsetTop = document.querySelector(elements.logo_menu_frontpage).offsetTop;
+    const logoElemHeight = document.querySelector(
+      elements.logo_menu_frontpage
+    ).offsetHeight;
+
+    const mainTextOffset = elements.front_page_image.offsetTop;
+    const gapbetween =
+      parseInt(mainTextOffset) -
+      (parseInt(logoElemOffsetTop) +
+        parseInt(logoElemHeight));
+    return gapbetween / 2;
+  },
+  alignHomePageCTA_X: function () {
+    const mainTextOffsetLeft = parseInt(elements.front_page_image.offsetLeft);
+    const mainTextOffsetWidth = parseInt(elements.front_page_image.offsetWidth);
+    const innerWidth = parseInt(window.innerWidth);
+    const widthCTAHalf = parseInt(elements.homepage_cta.offsetWidth)/2;
+    const mainTextWidth = mainTextOffsetLeft + mainTextOffsetWidth;
+    const offsetLeft =
+      mainTextWidth + (innerWidth - mainTextWidth) / 2 - widthCTAHalf;
+    return offsetLeft;
+  },
+  alignHomePageCTA: function () {
+      const CTAPosY = this.alignHomePageCTA_Y();
+      const CTAPosX = this.alignHomePageCTA_X();
+      elements.homepage_cta.style.setProperty(
+        "--cta-y-portrait",
+        `${CTAPosY}px`
+      );
+      elements.homepage_cta.style.setProperty(
+        "--cta-x-landscape",
+        `${CTAPosX}px`
+      );
+  }
+
 }
 
 window.addEventListener("load", function () {
   //alert('load')
+  
+ app.alignHomePageCTA();
 
   var videoElem = document.getElementById("homeVideo");
   if (videoElem) {
@@ -152,4 +196,11 @@ window.addEventListener("load", function () {
   if (window.innerWidth < 1000) {
     document.querySelector(".intro-video").setAttribute("style",`${window.innerHeight}px;`);
   }
+});
+
+window.addEventListener("resize", function () {
+  //alert('load')
+  
+  app.alignHomePageCTA();
+  
 });

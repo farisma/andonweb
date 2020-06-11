@@ -3,8 +3,11 @@
 import elements from "./variables";
 
 window.addEventListener("load", function () {
-  let listLinks = elements.view_member_link;
-  console.log("list", listLinks);
+   let listLinks = elements.view_member_link;
+  //using spread operator on htmlcollection returned from getelementbyclassname
+//   let listLinks2 = document.getElementsByClassName("view-member-info");
+//   console.log("LIST", ...listLinks2);
+// let listLinks = [...listLinks2];
   listLinks.forEach((element) => {
     // alert("clicked");
     console.log("elem", element);

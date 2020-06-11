@@ -23,5 +23,6 @@ var elements = {
     ".animateToTop,.box,.team-list-item,.work-sec"
   ),
   work_section: document.querySelectorAll(".worksecAnim"),
+  homepage_cta: document.querySelector(".home_cta"),
 };
 export default elements;
