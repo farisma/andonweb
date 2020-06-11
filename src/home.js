@@ -131,8 +131,17 @@ var app = {
     ).offsetHeight);
     const heightCTAHalf = parseInt(elements.homepage_cta.offsetHeight) / 2;
     const mainTextOffset = parseInt(elements.front_page_image.offsetTop);
+    console.log(
+      logoElemOffsetTop,
+      "-",
+      logoElemHeight,
+      "-",
+      heightCTAHalf,
+      "-",
+      mainTextOffset
+    );
     const offsetTop =
-      ((mainTextOffset - (logoElemOffsetTop + logoElemHeight))/2) - heightCTAHalf;
+      ((mainTextOffset - (logoElemOffsetTop + logoElemHeight))/2) - heightCTAHalf + 13;
     return offsetTop;
   },
   alignHomePageCTA_X: function () {
