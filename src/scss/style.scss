@@ -118,6 +118,7 @@
 :root {
   --cta-y-portrait: 0px;
    --cta-x-landscape: 0px;
+   --fpcopy-y-portrait:0px;
 }
 .intro-video {
     
@@ -479,12 +480,20 @@
         position:relative;
         z-index:30;
     }
+    &.front-page-logo-wrap{
+        position:absolute;
+        top:0;
+        left:0;
+        opacity:1;
+        visibility: hidden;
+    }
 }
 .front-page-main-copy {
     width:100%;
     max-width:320px;
     padding-left:40px;
     /*padding-top:214px;*/
+    
     margin-top:auto;
     @media #{$mq-620-up}{
         max-width:430px;
@@ -501,6 +510,7 @@
         max-width:420px;
        
     }
+
     @media #{$mq-1000-up-portrait}{
         max-width:700px;
     }
@@ -522,6 +532,18 @@
         position: relative;
         // top:2px;
         display: block;
+    }
+    &.pos-abs {
+        bottom:120px;
+        position:absolute;
+        z-index:22;
+        visibility: hidden;
+         @media #{$mq-1000-down-portrait}{
+             bottom:var(--fpcopy-y-portrait);
+            // top:50%;
+            // transform: translateY(-50%);
+            // bottom: auto;
+         }
     }
 }
 
@@ -1391,8 +1413,8 @@ margin-bottom:50px;
    opacity:0;
    @media #{$mq-1000-down-portrait} {
        left:40px;
-       top:var(--cta-y-portrait);
-    //    top:17%;
+       bottom:var(--cta-y-portrait);
+       top:auto;
    }
      a{
          @include swissCondensed;

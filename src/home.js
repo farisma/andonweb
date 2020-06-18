@@ -6,6 +6,14 @@ import menuAnim from './menu';
 
 gsap.registerPlugin();
 var app = {
+  checkMobileScreenPortrait: function () {
+    let screenW = window.innerWidth;
+    let screenH = window.innerHeight;
+    if (screenW < 1000 && screenW < screenH) { //cehcking mobile portrait
+      return true;
+    }
+    return false;
+  },
   loadLogo: function () {
     document.getElementById(
       "current_year"
@@ -74,15 +82,30 @@ var app = {
       //        "innerHeight" + window.innerHeight + "outer" + window.outerHeight
       // );
       let slideDistance = window.innerHeight;// - 120;
+    
+      console.log(this.checkMobileScreenPortrait());
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
            {
-            var tl = new TimelineMax();  
+            var tl = new TimelineMax();  //front-page-logo-wrap;
               tl.to(
                 elements.wrapper,
                 0.75,
                 { y: -120, ease: "power1.out" /*Linear.easeNone*/ },
                 "index"
               )
+                .from(
+                  [".pos-abs"],
+                  0.5,
+                  { autoAlpha: 0, y: -50, ease: "power1.out" },
+                  "-=0.3"
+                )
+                .from(
+                  [".front-page-logo-wrap"],
+                  0.5,
+                  { autoAlpha: 0, y: -50, ease: "power1.out" },
+                  "-=0.1"
+                )
+
                 .to(
                   [elements.introContent, ".landing-logo", ".no-g"],
                   0.5,
@@ -98,7 +121,8 @@ var app = {
                 .fromTo(
                   elements.homepage_cta,
                   0.5,
-                  { y: -25, autoAlpha:0,ease: "power1.out" },{y: 0, autoAlpha:1,ease: "power1.out" },
+                  { y: -25, autoAlpha: 0, ease: "power1.out" },
+                  { y: 0, autoAlpha: 1, ease: "power1.out" },
                   "-=0.5"
                 )
                 .to(
@@ -144,6 +168,7 @@ var app = {
       ((mainTextOffset - (logoElemOffsetTop + logoElemHeight))/2) - heightCTAHalf + 13;
     return offsetTop;
   },
+
   alignHomePageCTA_X: function () {
     const mainTextOffsetLeft = parseInt(elements.front_page_image.offsetLeft);
     const mainTextOffsetWidth = parseInt(elements.front_page_image.offsetWidth);
@@ -154,17 +179,40 @@ var app = {
       mainTextWidth + (innerWidth - mainTextWidth) / 2 - widthCTAHalf;
     return offsetLeft;
   },
+  alignFPCopyY: function () {
+    const fpcopyHeightHalf =
+      parseInt(document.querySelector(".pos-abs").offsetHeight) / 3;
+    const screenHeight = ((parseInt(window.innerHeight)/2) - 120);
+    const offsetPosY = screenHeight + fpcopyHeightHalf;
+
+     document
+       .querySelector(".pos-abs")
+      .style.setProperty("--fpcopy-y-portrait", `${offsetPosY}px`);
+    
+     const footerOffset = parseInt(
+       document.querySelector(elements.footerContent).getBoundingClientRect()
+         .top
+     );
+     const heightCTAHalf =
+      parseInt(elements.homepage_cta.getBoundingClientRect().height) / 2;
+    
+    const CTAoffset = 120 + (offsetPosY - 120) / 2 - heightCTAHalf;
+     elements.homepage_cta.style.setProperty(
+       "--cta-y-portrait",
+       `${CTAoffset}px`
+     );
+
+  },
   alignHomePageCTA: function () {
-      const CTAPosY = this.alignHomePageCTA_Y();
-      const CTAPosX = this.alignHomePageCTA_X();
-      elements.homepage_cta.style.setProperty(
-        "--cta-y-portrait",
-        `${CTAPosY}px`
-      );
+    const CTAPosX = this.alignHomePageCTA_X();
+    this.alignFPCopyY();
+    
       elements.homepage_cta.style.setProperty(
         "--cta-x-landscape",
         `${CTAPosX}px`
-      );
+    );
+   
+    
   }
 
 }
