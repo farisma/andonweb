@@ -81,7 +81,9 @@ var app = {
       //      alert(
       //        "innerHeight" + window.innerHeight + "outer" + window.outerHeight
       // );
-      let slideDistance = window.innerHeight;// - 120;
+      let slideDistance =
+        window.innerHeight -
+        document.querySelector(".front-page-footer").getBoundingClientRect().height;// - 120;
     
       console.log(this.checkMobileScreenPortrait());
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
@@ -90,7 +92,7 @@ var app = {
               tl.to(
                 elements.wrapper,
                 0.75,
-                { y: -120, ease: "power1.out" /*Linear.easeNone*/ },
+                { top: slideDistance, ease: "power1.out" /*Linear.easeNone*/ },
                 "index"
               )
                 .from(

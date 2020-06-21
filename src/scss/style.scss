@@ -144,9 +144,9 @@
     left:0;
     width:100%;
     z-index:10;
-      @media #{$mq-1000-down-portrait} {
+    @media #{$mq-1000-down-portrait} {
         height:100%;
-      }
+    }
     video{ 
         min-width:100%;
         min-height:100%;
