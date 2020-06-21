@@ -182,6 +182,7 @@ var app = {
     return offsetLeft;
   },
   alignFPCopyY: function () {
+    alert("/3")
     const fpcopyHeightHalf =
       parseInt(document.querySelector(".pos-abs").offsetHeight)/3;
     const screenHeight =
