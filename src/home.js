@@ -187,7 +187,11 @@ var app = {
     const screenHeight =
       (parseInt(document.querySelector(".content").clientHeight) / 2) - 120;
     const offsetPosY = screenHeight + fpcopyHeightHalf;
-  console.log(screenHeight,'window',window.innerHeight);
+  console.log(
+    document.querySelector(".content").clientHeight,
+    "window",
+    window.innerHeight
+  );
      document
        .querySelector(".pos-abs")
       .style.setProperty("--fpcopy-y-portrait", `${offsetPosY}px`);
