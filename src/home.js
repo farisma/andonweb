@@ -184,7 +184,8 @@ var app = {
   alignFPCopyY: function () {
     const fpcopyHeightHalf =
       parseInt(document.querySelector(".pos-abs").offsetHeight) / 4;
-    const screenHeight = parseInt(document.body.clientHeight) / 2 - 120;
+    const screenHeight =
+      (parseInt(document.querySelector(".content").clientHeight) / 2) - 120;
     const offsetPosY = screenHeight + fpcopyHeightHalf;
   console.log(screenHeight,'window',window.innerHeight);
      document
