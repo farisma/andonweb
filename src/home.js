@@ -83,7 +83,7 @@ var app = {
       // );
       let slideDistance =
         window.innerHeight -
-        document.querySelector(".front-page-footer").getBoundingClientRect().top;// - 120;
+        document.querySelector(".front-page-footer").getBoundingClientRect().height;// - 120;
     
       console.log(this.checkMobileScreenPortrait());
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
@@ -92,7 +92,7 @@ var app = {
               tl.to(
                 elements.wrapper,
                 0.75,
-                { y: -slideDistance, ease: "power1.out" /*Linear.easeNone*/ },
+                { top: slideDistance, ease: "power1.out" /*Linear.easeNone*/ },
                 "index"
               )
                 .from(
@@ -182,7 +182,7 @@ var app = {
     return offsetLeft;
   },
   alignFPCopyY: function () {
-    alert("top")
+    alert("/5")
     const fpcopyHeightHalf =
       parseInt(document.querySelector(".pos-abs").offsetHeight)/6;
     const screenHeight =
