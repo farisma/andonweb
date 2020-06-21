@@ -184,7 +184,7 @@ var app = {
   alignFPCopyY: function () {
     alert("/5")
     const fpcopyHeightHalf =
-      parseInt(document.querySelector(".pos-abs").offsetHeight)/5;
+      parseInt(document.querySelector(".pos-abs").offsetHeight)/6;
     const screenHeight =
       (parseInt(window.innerHeight) -
         parseInt(document.querySelector(".front-page-footer").offsetHeight) - parseInt(document.querySelector(".logo-wrap").offsetHeight)) / 2;
@@ -203,7 +203,7 @@ var app = {
          .top
      );
      const heightCTAHalf =
-      parseInt(elements.homepage_cta.getBoundingClientRect().height) / 2;
+      parseInt(elements.homepage_cta.getBoundingClientRect().height) / 3;
     
     const CTAoffset = 120 + (offsetPosY - 120) / 2 - heightCTAHalf;
      elements.homepage_cta.style.setProperty(
