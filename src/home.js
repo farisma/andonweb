@@ -148,26 +148,26 @@ var app = {
         var filetype = video.split('.')[2];
         return filetype;
   },
-  alignHomePageCTA_Y: function () {
-    const logoElemOffsetTop = parseInt(document.querySelector(elements.logo_menu_frontpage).offsetTop);
-    const logoElemHeight =  parseInt(document.querySelector(
-      elements.logo_menu_frontpage
-    ).offsetHeight);
-    const heightCTAHalf = parseInt(elements.homepage_cta.offsetHeight) / 2;
-    const mainTextOffset = parseInt(elements.front_page_image.offsetTop);
-    console.log(
-      logoElemOffsetTop,
-      "-",
-      logoElemHeight,
-      "-",
-      heightCTAHalf,
-      "-",
-      mainTextOffset
-    );
-    const offsetTop =
-      ((mainTextOffset - (logoElemOffsetTop + logoElemHeight))/2) - heightCTAHalf + 13;
-    return offsetTop;
-  },
+  // alignHomePageCTA_Y: function () {
+  //   const logoElemOffsetTop = parseInt(document.querySelector(elements.logo_menu_frontpage).offsetTop);
+  //   const logoElemHeight =  parseInt(document.querySelector(
+  //     elements.logo_menu_frontpage
+  //   ).offsetHeight);
+  //   const heightCTAHalf = parseInt(elements.homepage_cta.offsetHeight) / 2;
+  //   const mainTextOffset = parseInt(elements.front_page_image.offsetTop);
+  //   console.log(
+  //     logoElemOffsetTop,
+  //     "-",
+  //     logoElemHeight,
+  //     "-",
+  //     heightCTAHalf,
+  //     "-",
+  //     mainTextOffset
+  //   );
+  //   const offsetTop =
+  //     ((mainTextOffset - (logoElemOffsetTop + logoElemHeight))/2) - heightCTAHalf + 13;
+  //   return offsetTop;
+  // },
 
   alignHomePageCTA_X: function () {
     const mainTextOffsetLeft = parseInt(elements.front_page_image.offsetLeft);
@@ -181,7 +181,7 @@ var app = {
   },
   alignFPCopyY: function () {
     const fpcopyHeightHalf =
-      parseInt(document.querySelector(".pos-abs").offsetHeight) / 3;
+      parseInt(document.querySelector(".pos-abs").offsetHeight) / 2;
     const screenHeight = ((parseInt(window.innerHeight)/2) - 120);
     const offsetPosY = screenHeight + fpcopyHeightHalf;
 
