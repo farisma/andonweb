@@ -95,8 +95,7 @@ var app = {
       );
       this.checkMobileScreenPortrait() ? slideDistance += 60 : slideDistance = slideDistance;
         
-      console.log(slideDistance);
-      console.log(this.checkMobileScreenPortrait());
+    
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
            {
             var tl = new TimelineMax();  //front-page-logo-wrap;
@@ -216,7 +215,7 @@ var app = {
      const heightCTAHalf =
       parseInt(elements.homepage_cta.getBoundingClientRect().height);
     
-    const CTAoffset = 180 + ((offsetPosY - 180) / 2) - heightCTAHalf;
+    const CTAoffset = 60 + ((offsetPosY - 60) / 2) - heightCTAHalf;
      elements.homepage_cta.style.setProperty(
        "--cta-y-portrait",
        `${CTAoffset}px`
@@ -268,9 +267,9 @@ window.addEventListener("load", function () {
   var landingLogo = document.getElementById("landing-logo");
   if (landingLogo) app.loadLogo();
 
-  if (window.innerWidth < 1000) {
-    document.querySelector(".intro-video").setAttribute("style",`${window.innerHeight}px;`);
-  }
+  // if (window.innerWidth < 1000) {
+  //   document.querySelector(".intro-video").setAttribute("style",`${window.innerHeight}px;`);
+  // }
 });
 
 window.addEventListener("resize", function () {
