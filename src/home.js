@@ -10,6 +10,7 @@ var app = {
     let screenW = window.innerWidth;
     let screenH = window.innerHeight;
     if (screenW < 1000 && screenW < screenH) { //cehcking mobile portrait
+      alert('port')
       return true;
     }
     return false;
@@ -83,8 +84,18 @@ var app = {
       // );
       let slideDistance =
         window.innerHeight -
-        document.querySelector(".front-page-footer").getBoundingClientRect().height;// - 120;
-    
+        document.querySelector(".front-page-footer").getBoundingClientRect().top;// - 120;
+      console.log(
+        window.innerHeight,
+        "-",
+        document.querySelector(".front-page-footer").getBoundingClientRect()
+          .top,
+        "-",
+        slideDistance
+      );
+      this.checkMobileScreenPortrait() ? slideDistance += 60 : slideDistance = slideDistance;
+        
+      console.log(slideDistance);
       console.log(this.checkMobileScreenPortrait());
             if(that.checkHasClass(elements.wrapper,elements.slidedUpContentClass))        
            {
@@ -92,7 +103,7 @@ var app = {
               tl.to(
                 elements.wrapper,
                 0.75,
-                { top: slideDistance, ease: "power1.out" /*Linear.easeNone*/ },
+                { y: -slideDistance, ease: "power1.out" /*Linear.easeNone*/ },
                 "index"
               )
                 .from(
@@ -182,7 +193,7 @@ var app = {
     return offsetLeft;
   },
   alignFPCopyY: function () {
-    alert("/5")
+  
     const fpcopyHeightHalf =
       parseInt(document.querySelector(".pos-abs").offsetHeight)/6;
     const screenHeight =
