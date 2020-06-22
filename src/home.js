@@ -82,9 +82,9 @@ var app = {
       //      alert(
       //        "innerHeight" + window.innerHeight + "outer" + window.outerHeight
       // );
-      let slideDistance =
-        window.innerHeight -
-        document.querySelector(".front-page-footer").getBoundingClientRect().top;// - 120;
+      let slideDistance =  120;// - 120;
+        
+       
       console.log(
         window.innerHeight,
         "-",
@@ -214,7 +214,7 @@ var app = {
          .top
      );
      const heightCTAHalf =
-      parseInt(elements.homepage_cta.getBoundingClientRect().height) / 2;
+      parseInt(elements.homepage_cta.getBoundingClientRect().height);
     
     const CTAoffset = 120 + ((offsetPosY - 120) / 2) - heightCTAHalf;
      elements.homepage_cta.style.setProperty(
