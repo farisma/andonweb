@@ -216,7 +216,7 @@ var app = {
      const heightCTAHalf =
       parseInt(elements.homepage_cta.getBoundingClientRect().height);
     
-    const CTAoffset = 120 + ((offsetPosY - 120) / 2) - heightCTAHalf;
+    const CTAoffset = 180 + ((offsetPosY - 180) / 2) - heightCTAHalf;
      elements.homepage_cta.style.setProperty(
        "--cta-y-portrait",
        `${CTAoffset}px`
