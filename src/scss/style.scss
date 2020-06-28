@@ -119,6 +119,7 @@
   --cta-y-portrait: 0px;
    --cta-x-landscape: 0px;
    --fpcopy-y-portrait:0px;
+    --cta-y-landscape: 0px;
 }
 .intro-video {
     
@@ -1297,6 +1298,11 @@ p{
             visibility: visible;
             transform: scaleX(1);
         }
+        &.orangeline {
+            &:before {
+            background-color: #F6921E;
+            }
+        }
 }
 .innerpage-footer {
 height:120px;
@@ -1415,7 +1421,7 @@ margin-bottom:50px;
 
 .home_cta {
     position: absolute;
-    top:50%;
+    top:var(--cta-y-landscape);
     z-index:25;
     transform: translateY(-50%);
     // left:60%;
@@ -1431,7 +1437,7 @@ margin-bottom:50px;
          font-size:40px;
          text-decoration:none;
          position: relative;
-         color:#000;
+         color:#F6921E;
           @media #{$mq-1000-down-portrait} {
                font-size:30px;
           }
@@ -1446,8 +1452,8 @@ margin-bottom:50px;
             transform: translateY(-50%);
             width: 20px;
             height: 20px;
-            border-right: 2px solid #000;
-            border-top: 2px solid #000;
+            border-right: 2px solid #F6921E;
+            border-top: 2px solid #F6921E;
             transform: rotate(45deg);
              @media #{$mq-1000-down-portrait} {
                 

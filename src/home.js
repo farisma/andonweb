@@ -191,6 +191,11 @@ var app = {
       mainTextWidth + (innerWidth - mainTextWidth) / 2 - widthCTAHalf;
     return offsetLeft;
   },
+  alignHomePageCTA_X2: function () {
+    const innerWidth = parseInt(window.innerWidth);
+    const widthCTA = parseInt(elements.homepage_cta.getBoundingClientRect().width);
+    return innerWidth - widthCTA - 75 - 30;// right margin of footer and width of arrow
+  },
   alignFPCopyY: function () {
   
     const fpcopyHeightHalf =
@@ -219,11 +224,20 @@ var app = {
      elements.homepage_cta.style.setProperty(
        "--cta-y-portrait",
        `${CTAoffset}px`
-     );
+    );
+    console.log(window.innerHeight,footerOffset,heightCTAHalf);
+    var ctaY =
+      window.innerHeight -
+      document.querySelector(".front-page-footer").offsetHeight -
+      70;
+      // heightCTAHalf -
+      // 70;
+    elements.homepage_cta.style.setProperty("--cta-y-landscape", `${ctaY}px`);
 
   },
   alignHomePageCTA: function () {
-    const CTAPosX = this.alignHomePageCTA_X();
+    // const CTAPosX = this.alignHomePageCTA_X();
+    const CTAPosX = this.alignHomePageCTA_X2();
     this.alignFPCopyY();
     
       elements.homepage_cta.style.setProperty(
