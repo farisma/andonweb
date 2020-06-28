@@ -31,11 +31,34 @@ var menuAnim = {
            var tl = new TimelineMax();
            console.log("hi")
            var menuWidth = this.findMenuWidth();
-           tl.to(elements.menu, .5, {left:-menuWidth, ease:Linear.easeNone},"start")
-           .to(elements.wrapper, .3, {x:menuWidth, ease:Linear.easeNone})
-          // .to(this.menu, .3, {x:menuWidth, css:{zIndex:25}, ease:Linear.easeNone},"+=0.1")          
-           .staggerTo(elements.nav_item,.5,{x:0,autoAlpha:1,ease:Linear.easeNone},0.15,"-=1.0")
-            .from('.closeMenu', 0.5, { autoAlpha: 0 }, "+=0.3");
+           tl.to(
+             elements.menu,
+             0.5,
+             { left: -menuWidth, ease: Linear.easeNone },
+             "start"
+           )
+             .to(
+               [
+                 elements.wrapper,
+                 ".front-page-main-copy",
+                 ".home_cta",
+                 ".front-page-logo-wrap",
+               ],
+               0.3,
+               {
+                 x: menuWidth,
+                 ease: Linear.easeNone,
+               }
+             )
+             // .to(this.menu, .3, {x:menuWidth, css:{zIndex:25}, ease:Linear.easeNone},"+=0.1")
+             .staggerTo(
+               elements.nav_item,
+               0.5,
+               { x: 0, autoAlpha: 1, ease: Linear.easeNone },
+               0.15,
+               "-=1.0"
+             )
+             .from(".closeMenu", 0.5, { autoAlpha: 0 }, "+=0.3");
         
           document
             .querySelector(".closeMenu")
@@ -50,9 +73,18 @@ var menuAnim = {
         elements.menu.classList.remove('show');
         var tl = new TimelineMax();  
         var menuWidth = this.findMenuWidth();      
-        tl.to(elements.menu, 0.25, {left:-menuWidth, ease:Linear.easeNone}) 
-        .to(elements.nav_item,.25,{x:-50,autoAlpha:0},"-=0.3")     
-        .to(elements.wrapper, 0.25, {x:0, ease:Linear.easeNone});
+        tl.to(elements.menu, 0.25, { left: -menuWidth, ease: Linear.easeNone })
+          .to(elements.nav_item, 0.25, { x: -50, autoAlpha: 0 }, "-=0.3")
+          .to(
+            [
+              elements.wrapper,
+              ".front-page-main-copy",
+              ".home_cta",
+              ".front-page-logo-wrap",
+            ],
+            0.25,
+            { x: 0, ease: Linear.easeNone }
+          );
           
         },
      alignMenu: function(){
