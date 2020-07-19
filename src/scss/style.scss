@@ -601,6 +601,7 @@ p{
 
 .boxes-cont {
     @include innerpage-container;
+    @include w-1200;
     margin-top:40px;
     
     .box-head {
@@ -661,6 +662,7 @@ p{
         }
         img {
             max-width:100%;
+            width:100%;
             height:auto;
             @media #{$mq-1000-down}{  
              height:100%;
