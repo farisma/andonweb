@@ -395,7 +395,7 @@
     }
   ul {
       padding:0;
-      margin:175px 0 0 0;
+      margin:329px 0 0 0;
       @media #{$mq-1000-down} {
         margin:106px 0 0 0;
     }
@@ -419,9 +419,9 @@
         }
         a{
             transition: all .5s ease-out; 
-            line-height: 22px;
+            line-height: 60%;
             text-transform:uppercase;
-            font-size:40px;
+            font-size:55px;
             color:#fff;
             text-align: right;
             text-decoration:none;
@@ -1380,40 +1380,39 @@ margin-bottom:50px;
     }
 }
 
-.cursorcontainer {
-    position:absolute;
-    background:#F6921E;
-    top:0;
-    left:0;
-    width:20px;
-    height:20px;
-    border-radius:50%;
-    z-index:25;
-    // transition-timing-function:ease;
-    // transition-duration: .4s;
-    pointer-events: none;
-    user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    visibility:visible;
-    display: block;
-    transform:translate(-50%,-50%);
-    @media #{$mq-1000-down} {
-       display:none;
-    }
+// .cursorcontainer {
+//     position:absolute;
+//     background:#F6921E;
+//     top:0;
+//     left:0;
+//     width:20px;
+//     height:20px;
+//     border-radius:50%;
+//     z-index:25;
+   
+//     pointer-events: none;
+//     user-select: none;
+//     -webkit-user-select: none;
+//     -moz-user-select: none;
+//     -ms-user-select: none;
+//     visibility:visible;
+//     display: block;
+//     transform:translate(-50%,-50%);
+//     @media #{$mq-1000-down} {
+//        display:none;
+//     }
 
-   &.expandonhover{
-       width:45px;
-       height:45px;
-       opacity:.4;
-    //    transform: translate(-30px,-20px);
-       transition: width .3s ease-in,height .3s ease-in,opacity .4s ease-out;
-   }
-   &.show {
-       visibility:visible;
-   }
-}
+//    &.expandonhover{
+//        width:45px;
+//        height:45px;
+//        opacity:.4;
+   
+//        transition: width .3s ease-in,height .3s ease-in,opacity .4s ease-out;
+//    }
+//    &.show {
+//        visibility:visible;
+//    }
+// }
 
 .invisible {
     visibility: hidden;
@@ -1434,7 +1433,7 @@ margin-bottom:50px;
    }
      a{
          @include swissCondensed;
-         font-size:40px;
+         font-size:20px;
          text-decoration:none;
          position: relative;
          color:#F6921E;
@@ -1448,10 +1447,10 @@ margin-bottom:50px;
              position: absolute;
             content: '';
             left: 102%;
-            top: 14px;
+            top: 7px;
             transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
+            width: 10px;
+            height: 10px;
             border-right: 2px solid #F6921E;
             border-top: 2px solid #F6921E;
             transform: rotate(45deg);

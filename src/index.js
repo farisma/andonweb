@@ -70,7 +70,7 @@ ready(function () {
 
                             
   //creating new object for custom cursor
-  let customCursor = new Customcursor();
+  // let customCursor = new Customcursor();
 // for video in emirates delivers
   const videoPlayBtn = document.querySelector(".video-play-btn"); // playbutton
   console.log("video",videoPlayBtn)
