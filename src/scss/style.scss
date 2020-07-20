@@ -1434,7 +1434,7 @@ margin-bottom:50px;
    }
      a{
          @include swissCondensed;
-         font-size:40px;
+         font-size:25px;
          text-decoration:none;
          position: relative;
          color:#F6921E;
@@ -1448,10 +1448,10 @@ margin-bottom:50px;
              position: absolute;
             content: '';
             left: 102%;
-            top: 14px;
+            top: 7px;
             transform: translateY(-50%);
-            width: 20px;
-            height: 20px;
+            width: 14px;
+            height: 14px;
             border-right: 2px solid #F6921E;
             border-top: 2px solid #F6921E;
             transform: rotate(45deg);
