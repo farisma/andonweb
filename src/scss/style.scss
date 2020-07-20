@@ -399,6 +399,9 @@
       @media #{$mq-1000-down} {
         margin:106px 0 0 0;
     }
+     @media #{$mq-1440-down} {
+        margin:195px 0 0 0;
+     }
     li {
         list-style:none;               
         padding:0;
@@ -608,7 +611,8 @@ p{
         max-height:300px;
         position:relative;
         margin:0 auto;
-        @media #{$mq-1000-down}{
+        overflow-y:hidden;
+        @media #{$mq-1200-down}{
             margin-left:40px;
             margin-right:40px;
             height:250px;
@@ -688,7 +692,7 @@ p{
         
         margin:9px auto 60px auto;
         
-        @media #{$mq-1000-down} {
+        @media #{$mq-1200-down} {
             margin: 9px 40px 60px 40px;
             grid-template-columns: 1fr 1fr;
         }
@@ -1074,6 +1078,7 @@ p{
 }
 .works-page-cont {
     @include innerpage-container;
+    @include w-1200;
     margin-top:40px;
 &.template-1 {
     .work-head {
@@ -1111,10 +1116,32 @@ p{
         
     }
     .work-sec {
-        background:#3c3c3f;
-        margin-top:10px;
+        // background:#3c3c3f;
+        margin-top:2px;
             text-align :center;
             // transition: all 1s ease-in-out;
+            .two-image-grid {
+                 margin:0 auto;
+         display:flex;
+         flex-direction: row;
+         justify-content: space-between;
+         width:100%;
+         max-width:812px;
+         padding:60px 0px;
+          @media #{$mq-1000-down} {
+              flex-direction: column;
+              align-items: center;
+          }
+           .work-image-tn {
+                transition: all 1s ease-in-out;
+                @media #{$mq-1000-down} {
+                        padding-bottom:30px;
+                }
+          }
+          &.mexico-two {
+              max-width:830px;
+          }
+            }
       .three-image-grid {
          margin:0 auto;
          display:flex;
@@ -1145,6 +1172,9 @@ p{
       }
       .ed_fb {
           padding-top:60px;
+      }
+      &.bggrey {
+          background:#d0d2d1;
       }
     }
 }
@@ -1382,6 +1412,10 @@ margin-bottom:50px;
     }
 }
 
+.pos-rel {
+    position:relative;
+}
+
 // .cursorcontainer {
 //     position:absolute;
 //     background:#F6921E;
@@ -1435,19 +1469,15 @@ margin-bottom:50px;
    }
      a{
          @include swissCondensed;
-<<<<<<< HEAD
-         font-size:25px;
-=======
          font-size:20px;
->>>>>>> 5e197878dac1f9c734b140b084480f72787930ed
          text-decoration:none;
          position: relative;
          color:#F6921E;
           @media #{$mq-1000-down-portrait} {
-               font-size:30px;
+               font-size:20px;
           }
            @media #{$mq-1000-down-landscape} {
-               font-size:30px;
+               font-size:20px;
            }
          &:after {
              position: absolute;
@@ -1455,13 +1485,10 @@ margin-bottom:50px;
             left: 102%;
             top: 7px;
             transform: translateY(-50%);
-<<<<<<< HEAD
-            width: 14px;
-            height: 14px;
-=======
+
             width: 10px;
             height: 10px;
->>>>>>> 5e197878dac1f9c734b140b084480f72787930ed
+
             border-right: 2px solid #F6921E;
             border-top: 2px solid #F6921E;
             transform: rotate(45deg);
@@ -1485,4 +1512,81 @@ margin-bottom:50px;
            
 
      }
+}
+
+.video-modal-click-cont {
+    position:absolute;
+    &.mex-video-modal-click {
+        top:25%;
+        left:15%;
+        width:25%;
+        height:60%;
+        .modal-play-btn {
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+        }
+    }
+}
+
+.body-blackout {
+  position: fixed;
+  z-index: 1010;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .9);
+  display: none;
+  
+  &.is-blacked-out {
+    display: block;
+  }
+}
+
+.popup-modal {
+  height: 80%;
+  width:90%;
+//   background-color: #fff;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 45px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 300ms ease-in-out;
+  z-index: 1011;
+  
+  &.is--visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  &__close {
+    position: absolute;
+    font-size: 1.2rem;
+    right: -10px;
+    top: -10px;
+    cursor: pointer;
+  }
+
+  .modal-video-cont {
+     width:400px;
+     left:50%;
+     top:50%;
+     position: absolute;
+     transform: translate(-50%,-50%);
+     height:100%;
+    &.mexicoroutelaunch-video {
+
+    }
+    video {
+        width:100%;
+        max-width:100%;
+        height:100%;
+    }
+  }
+  
 }

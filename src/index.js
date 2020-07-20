@@ -5,10 +5,11 @@ import LazyLoad from "vanilla-lazyload";
 import elements from "./variables";
 import menuAnim from "./menu";
 import scrollAnim from "./scrollanim";
-import Customcursor from "./customcursor_gs";
+//import Customcursor from "./customcursor_gs";
 import Video from "./video";
 import Map from "./map";
 import './scss/style.scss';
+import Modal from "./modal";
 gsap.registerPlugin();
 ready(function () {
      
@@ -78,10 +79,18 @@ ready(function () {
     const videoTn = document.querySelector(".video-tn"); // thumbnail
     const videoPlayer = document.querySelector(".videoPlayer"); //videotag container
     const videoElem = document.getElementById("edVideo"); // video tag
-    let videoPlay = new Video(videoPlayBtn, videoTn, videoPlayer, videoElem);
+    const autoplay = false;
+    let videoPlay = new Video(videoPlayBtn, videoTn, videoPlayer, videoElem, autoplay);
   }
   
 // video play/pause in continer
+  
+  // if popup modal exists
+   const popupModalExists = document.querySelector(".video-modal-click-cont");
+  if (popupModalExists) {
+    let popup = new Modal();
+  }
+
   
   let mapElement = document.getElementById("map");
   if (mapElement) {
