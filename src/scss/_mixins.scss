@@ -1,8 +1,12 @@
 @mixin innerpage-container {
     width:100%;
     max-width:812px;
+   
     margin:0 auto;
    
+}
+@mixin w-1200 {
+    max-width:1200px;
 }
 @mixin innerpage-cont-height{
     
