@@ -19,14 +19,16 @@ class Modal {
            );
            popupModal.classList.add("is--visible");
            this.bodyBlackout.classList.add("is-blacked-out");
-             console.log(videoSrc.dataset);
+             
              console.log(videoSrc.getAttribute("id"))
-             new Video(null,null,null, videoSrc,true);
+           new Video(null, null, null, videoSrc, true);
+           console.log(videoSrc.paused);
            popupModal
              .querySelector(".popup-modal__close")
              .addEventListener("click", () => {
                popupModal.classList.remove("is--visible");
                this.bodyBlackout.classList.remove("is-blacked-out");
+               videoSrc.pause();
              });
 
            this.bodyBlackout.addEventListener("click", () => {

@@ -18,15 +18,17 @@ class Video {
   }
 
   videoInit() {
-    if (this.autoplay == false) {
-       this.videoPlayBtn.addEventListener(
-         "click",
-         this.playVideo.bind(this, event)
-       );
-    }
-    else {
+    if (this.autoplay === true) {
       this.startVideo();
     }
+    if (this.videoPlayBtn) {
+                             this.videoPlayBtn.addEventListener(
+                               "click",
+                               this.playVideo.bind(this, event)
+                             );
+                           }
+    
+
    
     //this.videoPlayBtn.addEventListener("click", this.playVideo.bind(this));
   }
@@ -89,6 +91,7 @@ class Video {
     var filetype = video.split(".")[2];
     return filetype;
   }
+  
 }
 
 export default Video;
