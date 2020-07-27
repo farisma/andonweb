@@ -1528,7 +1528,7 @@ margin-bottom:50px;
             transform:translate(-50%,-50%);
         }
     }
-    &.rugby-1-video-modal-click {
+    &.rugby-main-video-modal-click {
         left:20%;
         top:10%;
         width:60%;
@@ -1548,6 +1548,66 @@ margin-bottom:50px;
         }
         
     }
+    &.rugby-social-video-modal-click {
+       
+        
+        width:20%;
+        height:57%;
+      .modal-play-btn {
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+           
+            .link-video-block {
+            width:100%;
+            height:100%;
+            cursor: pointer;
+        }
+      }
+    }
+     &.rugby-first-video {
+ top:20%;
+ left:18%;
+     }
+      &.rugby-second-video {
+          top:20%;
+ left:40%;
+     }
+      &.rugby-third-video {
+          top:10%;
+ left:61.5%;
+     }
+      &.rugby-fourth-video {
+ top:20%;
+ left:18%;
+ .modal-play-btn {
+            position:absolute;
+            left:50%;
+            top:40%;
+            transform:translate(-50%,-40%);
+        }
+     }
+      &.rugby-fifth-video {
+ top:20%;
+ left:40%;
+  .modal-play-btn {
+            position:absolute;
+            left:49%;
+            top:47%;
+            transform:translate(-49%,-47%);
+        }
+     }
+      &.rugby-sixth-video {
+          top:10%;
+            left:61.5%;
+            .modal-play-btn {
+            position:absolute;
+            left:49%;
+            top:55%;
+            transform:translate(-49%,-47%);
+        }
+     }
 }
 
 .body-blackout {
