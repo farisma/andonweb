@@ -44,7 +44,7 @@
     "gsap": "^3.2.6",
     "jquery": "^3.5.1",
     "load-google-maps-api": "^2.0.2",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "scrollmagic": "^2.0.7",
     "scrollmagic-plugin-gsap": "^1.0.4",
     "vanilla-lazyload": "^15.1.1"
